@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB258F84253541C70038BC9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB71365624E64E260038DA07 /* ViewController.swift */; };
+		DB258F85253541C70038BC9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB71365224E64E260038DA07 /* AppDelegate.swift */; };
+		DB258F86253541C70038BC9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB71365424E64E260038DA07 /* SceneDelegate.swift */; };
+		DB258F89253541C70038BC9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB71365D24E64E270038DA07 /* LaunchScreen.storyboard */; };
+		DB258F8A253541C70038BC9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB71365B24E64E270038DA07 /* Assets.xcassets */; };
+		DB258F8B253541C70038BC9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB71365824E64E260038DA07 /* Main.storyboard */; };
 		DB71365324E64E260038DA07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB71365224E64E260038DA07 /* AppDelegate.swift */; };
 		DB71365524E64E260038DA07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB71365424E64E260038DA07 /* SceneDelegate.swift */; };
 		DB71365724E64E260038DA07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB71365624E64E260038DA07 /* ViewController.swift */; };
@@ -16,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB258F8F253541C70038BC9B /* temp_dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = temp_dev.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB258F90253541C80038BC9B /* temp copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "temp copy-Info.plist"; path = "/Users/levi/Documents/leviseo/swift-study/temp/temp copy-Info.plist"; sourceTree = "<absolute>"; };
 		DB71364F24E64E260038DA07 /* temp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = temp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB71365224E64E260038DA07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB71365424E64E260038DA07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,6 +35,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DB258F87253541C70038BC9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DB71364C24E64E260038DA07 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -42,6 +57,7 @@
 			children = (
 				DB71365124E64E260038DA07 /* temp */,
 				DB71365024E64E260038DA07 /* Products */,
+				DB258F90253541C80038BC9B /* temp copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -49,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				DB71364F24E64E260038DA07 /* temp.app */,
+				DB258F8F253541C70038BC9B /* temp_dev.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +87,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		DB258F82253541C70038BC9B /* temp_dev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB258F8C253541C70038BC9B /* Build configuration list for PBXNativeTarget "temp_dev" */;
+			buildPhases = (
+				DB258F83253541C70038BC9B /* Sources */,
+				DB258F87253541C70038BC9B /* Frameworks */,
+				DB258F88253541C70038BC9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = temp_dev;
+			productName = temp;
+			productReference = DB258F8F253541C70038BC9B /* temp_dev.app */;
+			productType = "com.apple.product-type.application";
+		};
 		DB71364E24E64E260038DA07 /* temp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB71366324E64E270038DA07 /* Build configuration list for PBXNativeTarget "temp" */;
@@ -116,11 +150,22 @@
 			projectRoot = "";
 			targets = (
 				DB71364E24E64E260038DA07 /* temp */,
+				DB258F82253541C70038BC9B /* temp_dev */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DB258F88253541C70038BC9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB258F89253541C70038BC9B /* LaunchScreen.storyboard in Resources */,
+				DB258F8A253541C70038BC9B /* Assets.xcassets in Resources */,
+				DB258F8B253541C70038BC9B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DB71364D24E64E260038DA07 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -134,6 +179,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DB258F83253541C70038BC9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB258F84253541C70038BC9B /* ViewController.swift in Sources */,
+				DB258F85253541C70038BC9B /* AppDelegate.swift in Sources */,
+				DB258F86253541C70038BC9B /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DB71364B24E64E260038DA07 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -166,6 +221,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		DB258F8D253541C70038BC9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "temp copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.levi.temp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB258F8E253541C70038BC9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "temp copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.levi.temp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		DB71366124E64E270038DA07 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -317,6 +406,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DB258F8C253541C70038BC9B /* Build configuration list for PBXNativeTarget "temp_dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB258F8D253541C70038BC9B /* Debug */,
+				DB258F8E253541C70038BC9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DB71364A24E64E260038DA07 /* Build configuration list for PBXProject "temp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

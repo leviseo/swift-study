@@ -16,17 +16,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
        
-        window = UIWindow()
-        window?.rootViewController = FirstVC()
-//        window?.rootViewController = SecondVC()
-        window?.makeKeyAndVisible()
+//        window = UIWindow()
+//        window?.rootViewController = FirstVC()
+////        window?.rootViewController = SecondVC()
+//        window?.makeKeyAndVisible()
         
 //        self.window = UIWindow(frame: UIScreen.main.bounds)
-//        self.window?.rootViewController = FirstVC()
-//        self.naviController = UINavigationController(rootViewController: FirstVC())
-//        self.naviController?.navigationBar.isHidden = true
-//        self.window?.rootViewController = self.naviController
+////        self.window?.rootViewController = FirstVC()
+//        self.window?.rootViewController = testVC()
+////        self.naviController = UINavigationController(rootViewController: testVC())
+////        self.naviController?.navigationBar.isHidden = true
+////        self.window?.rootViewController = self.naviController
 //        self.window!.makeKeyAndVisible()
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let firstViewController = FirstVC()
+        self.window?.rootViewController = firstViewController
+        self.window!.makeKeyAndVisible()
         
         return true
     }

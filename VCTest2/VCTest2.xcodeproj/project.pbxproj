@@ -12,7 +12,10 @@
 		DB927536254A8074002D5DC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB927535254A8074002D5DC2 /* Assets.xcassets */; };
 		DB927539254A8074002D5DC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB927537254A8074002D5DC2 /* LaunchScreen.storyboard */; };
 		DBC5391A254AA38A00EC89FC /* RouterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC53919254AA38A00EC89FC /* RouterManager.swift */; };
-		DBC53925254AB7FD00EC89FC /* FirstVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBC53924254AB7FD00EC89FC /* FirstVC.storyboard */; };
+		DBC5392A254ABDB500EC89FC /* FirstVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBC53929254ABDB500EC89FC /* FirstVC.xib */; };
+		DBC5392E254ABEB600EC89FC /* ThirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC5392C254ABEB600EC89FC /* ThirdVC.swift */; };
+		DBC5392F254ABEB600EC89FC /* ThirdVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBC5392D254ABEB600EC89FC /* ThirdVC.xib */; };
+		DBC53936254AC3C000EC89FC /* SecondVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBC53935254AC3C000EC89FC /* SecondVC.xib */; };
 		DBDA602F254A90070034E0C3 /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDA602E254A90070034E0C3 /* SecondVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +27,10 @@
 		DB927538254A8074002D5DC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB92753A254A8074002D5DC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBC53919254AA38A00EC89FC /* RouterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterManager.swift; sourceTree = "<group>"; };
-		DBC53924254AB7FD00EC89FC /* FirstVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstVC.storyboard; sourceTree = "<group>"; };
+		DBC53929254ABDB500EC89FC /* FirstVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstVC.xib; sourceTree = "<group>"; };
+		DBC5392C254ABEB600EC89FC /* ThirdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdVC.swift; sourceTree = "<group>"; };
+		DBC5392D254ABEB600EC89FC /* ThirdVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirdVC.xib; sourceTree = "<group>"; };
+		DBC53935254AC3C000EC89FC /* SecondVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondVC.xib; sourceTree = "<group>"; };
 		DBDA602E254A90070034E0C3 /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,6 +67,7 @@
 				DB92752C254A8073002D5DC2 /* AppDelegate.swift */,
 				DBDA6037254A911D0034E0C3 /* FirstVC */,
 				DBDA6036254A90F70034E0C3 /* SecondVC */,
+				DBC53931254ABEC200EC89FC /* ThirdVC */,
 				DB927535254A8074002D5DC2 /* Assets.xcassets */,
 				DB927537254A8074002D5DC2 /* LaunchScreen.storyboard */,
 				DB92753A254A8074002D5DC2 /* Info.plist */,
@@ -69,10 +76,20 @@
 			path = VCTest2;
 			sourceTree = "<group>";
 		};
+		DBC53931254ABEC200EC89FC /* ThirdVC */ = {
+			isa = PBXGroup;
+			children = (
+				DBC5392C254ABEB600EC89FC /* ThirdVC.swift */,
+				DBC5392D254ABEB600EC89FC /* ThirdVC.xib */,
+			);
+			path = ThirdVC;
+			sourceTree = "<group>";
+		};
 		DBDA6036254A90F70034E0C3 /* SecondVC */ = {
 			isa = PBXGroup;
 			children = (
 				DBDA602E254A90070034E0C3 /* SecondVC.swift */,
+				DBC53935254AC3C000EC89FC /* SecondVC.xib */,
 			);
 			path = SecondVC;
 			sourceTree = "<group>";
@@ -81,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				DB927530254A8073002D5DC2 /* FirstVC.swift */,
-				DBC53924254AB7FD00EC89FC /* FirstVC.storyboard */,
+				DBC53929254ABDB500EC89FC /* FirstVC.xib */,
 			);
 			path = FirstVC;
 			sourceTree = "<group>";
@@ -143,9 +160,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBC53936254AC3C000EC89FC /* SecondVC.xib in Resources */,
+				DBC5392F254ABEB600EC89FC /* ThirdVC.xib in Resources */,
 				DB927539254A8074002D5DC2 /* LaunchScreen.storyboard in Resources */,
 				DB927536254A8074002D5DC2 /* Assets.xcassets in Resources */,
-				DBC53925254AB7FD00EC89FC /* FirstVC.storyboard in Resources */,
+				DBC5392A254ABDB500EC89FC /* FirstVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB927531254A8073002D5DC2 /* FirstVC.swift in Sources */,
+				DBC5392E254ABEB600EC89FC /* ThirdVC.swift in Sources */,
 				DB92752D254A8073002D5DC2 /* AppDelegate.swift in Sources */,
 				DBC5391A254AA38A00EC89FC /* RouterManager.swift in Sources */,
 				DBDA602F254A90070034E0C3 /* SecondVC.swift in Sources */,

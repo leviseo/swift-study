@@ -14,32 +14,32 @@ class ThirdVC: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        print("testVC did load")
+        print("ThirdVC did load")
     }
     
     // view life cycle
         override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
-            print("testVC will appear")
+            print("ThirdVC will appear")
         }
         
         override func viewDidAppear(_ animated: Bool) {
             super.viewDidAppear(animated)
-            print("testVC did appear")
+            print("ThirdVC did appear")
         }
         
         override func viewWillDisappear(_ animated: Bool) {
             super.viewWillDisappear(animated)
-            print("testVC will disappear")
+            print("ThirdVC will disappear")
         }
         
         override func viewDidDisappear(_ animated: Bool) {
             super.viewDidDisappear(animated)
-            print("testVC did disappear")
+            print("ThirdVC did disappear")
         }
         
         deinit {
-            print("testVC deinit")
+            print("ThirdVC deinit")
         }
 
 

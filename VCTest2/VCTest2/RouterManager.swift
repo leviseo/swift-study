@@ -13,8 +13,8 @@ class RouterManager {
 
     var window = UIApplication.shared.windows.first { $0.isKeyWindow }
     
-    func moveToTestVC() {
-        let vc = testVC()
+    func moveToThirdVC() {
+        let vc = ThirdVC()
         let nav = UINavigationController(rootViewController: vc)
         self.window!.rootViewController = nav
     }

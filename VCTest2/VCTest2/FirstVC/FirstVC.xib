@@ -20,8 +20,8 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Egh-Av-5bP">
-                    <rect key="frame" x="171" y="433" width="72" height="30"/>
-                    <state key="normal" title="SecondVC"/>
+                    <rect key="frame" x="179" y="433" width="56" height="30"/>
+                    <state key="normal" title="ThirdVC"/>
                     <connections>
                         <action selector="btnClick:" destination="-1" eventType="touchUpInside" id="JBP-NF-Cdm"/>
                     </connections>

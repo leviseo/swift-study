@@ -24,7 +24,7 @@ class FirstVC: UIViewController {
     }
     
     @IBAction func btnClick(_ sender: Any) {
-        RouterManager.shared.moveToTestVC()
+        RouterManager.shared.moveToThirdVC()
     }
     
 // view life cycle

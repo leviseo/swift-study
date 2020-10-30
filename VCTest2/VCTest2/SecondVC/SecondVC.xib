@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SecondVC" customModule="VCTest2" customModuleProvider="target">
             <connections>
+                <outlet property="btn1" destination="yp0-Vc-80J" id="RoH-g8-fSV"/>
+                <outlet property="btn3" destination="YZn-yT-2HF" id="h9Y-TW-1dY"/>
                 <outlet property="view" destination="iN0-l3-epB" id="UeY-c1-Wmw"/>
             </connections>
         </placeholder>
@@ -18,18 +20,42 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="second" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vf-4D-fZh">
-                    <rect key="frame" x="179" y="437.5" width="56" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="second" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vf-4D-fZh">
+                    <rect key="frame" x="20" y="84" width="374" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yp0-Vc-80J">
+                    <rect key="frame" x="20" y="341" width="374" height="30"/>
+                    <state key="normal" title="FirstVC"/>
+                    <connections>
+                        <action selector="btn1Click:" destination="-1" eventType="touchUpInside" id="rDG-on-IVv"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZn-yT-2HF">
+                    <rect key="frame" x="20" y="426" width="374" height="30"/>
+                    <state key="normal" title="ThirdVC"/>
+                    <connections>
+                        <action selector="btn3Click:" destination="-1" eventType="touchUpInside" id="dkv-M0-30H"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemIndigoColor"/>
             <constraints>
-                <constraint firstItem="7vf-4D-fZh" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ZB3-fa-ub8"/>
-                <constraint firstItem="7vf-4D-fZh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qaw-20-x1J"/>
+                <constraint firstItem="YZn-yT-2HF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="6WF-Y2-zPv"/>
+                <constraint firstItem="YZn-yT-2HF" firstAttribute="top" secondItem="yp0-Vc-80J" secondAttribute="bottom" constant="55" id="FSr-iP-T9R"/>
+                <constraint firstItem="yp0-Vc-80J" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="FxG-DR-KBB"/>
+                <constraint firstItem="7vf-4D-fZh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="NM5-3s-XBw"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="yp0-Vc-80J" secondAttribute="trailing" constant="20" id="OJs-cj-ETx"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="7vf-4D-fZh" secondAttribute="trailing" constant="20" id="Oa6-8g-yfQ"/>
+                <constraint firstItem="yp0-Vc-80J" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="ZJx-d6-h63"/>
+                <constraint firstItem="YZn-yT-2HF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dPS-zO-9Hh"/>
+                <constraint firstItem="7vf-4D-fZh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="etS-vH-55N"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="YZn-yT-2HF" secondAttribute="trailing" constant="20" id="oLq-Ri-okb"/>
+                <constraint firstItem="7vf-4D-fZh" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="40" id="oXm-EF-4cJ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="YZn-yT-2HF" secondAttribute="bottom" constant="406" id="s1g-FA-01h"/>
             </constraints>
             <point key="canvasLocation" x="141" y="145"/>
         </view>

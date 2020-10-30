@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FirstVC" customModule="VCTest2" customModuleProvider="target">
             <connections>
                 <outlet property="btn" destination="Egh-Av-5bP" id="vCh-va-dne"/>
+                <outlet property="btn2" destination="ha1-4N-kYw" id="BrH-dy-oBi"/>
                 <outlet property="view" destination="iN0-l3-epB" id="IKf-eF-BWI"/>
             </connections>
         </placeholder>
@@ -26,19 +27,29 @@
                         <action selector="btnClick:" destination="-1" eventType="touchUpInside" id="JBP-NF-Cdm"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ha1-4N-kYw">
+                    <rect key="frame" x="10" y="324" width="394" height="30"/>
+                    <state key="normal" title="SecondVC"/>
+                    <connections>
+                        <action selector="btn2Click:" destination="-1" eventType="touchUpInside" id="c0W-fv-kj9"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" systemColor="systemGreenColor"/>
             <constraints>
                 <constraint firstItem="Egh-Av-5bP" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="0PP-Cs-MMz"/>
                 <constraint firstItem="Egh-Av-5bP" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="AxQ-3j-hFT"/>
+                <constraint firstItem="ha1-4N-kYw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="JPa-ty-Myk"/>
+                <constraint firstItem="ha1-4N-kYw" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="280" id="WXX-VD-ReR"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ha1-4N-kYw" secondAttribute="trailing" constant="10" id="Wli-3V-2BH"/>
             </constraints>
             <point key="canvasLocation" x="141" y="149"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

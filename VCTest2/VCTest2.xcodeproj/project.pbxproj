@@ -16,6 +16,8 @@
 		DBC5392E254ABEB600EC89FC /* ThirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC5392C254ABEB600EC89FC /* ThirdVC.swift */; };
 		DBC5392F254ABEB600EC89FC /* ThirdVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBC5392D254ABEB600EC89FC /* ThirdVC.xib */; };
 		DBC53936254AC3C000EC89FC /* SecondVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBC53935254AC3C000EC89FC /* SecondVC.xib */; };
+		DBC5393E254BF0C600EC89FC /* FourthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC5393D254BF0C600EC89FC /* FourthVC.swift */; };
+		DBC5394A254BF79F00EC89FC /* FourthVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBC53949254BF79F00EC89FC /* FourthVC.xib */; };
 		DBDA602F254A90070034E0C3 /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDA602E254A90070034E0C3 /* SecondVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +33,8 @@
 		DBC5392C254ABEB600EC89FC /* ThirdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdVC.swift; sourceTree = "<group>"; };
 		DBC5392D254ABEB600EC89FC /* ThirdVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirdVC.xib; sourceTree = "<group>"; };
 		DBC53935254AC3C000EC89FC /* SecondVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondVC.xib; sourceTree = "<group>"; };
+		DBC5393D254BF0C600EC89FC /* FourthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthVC.swift; sourceTree = "<group>"; };
+		DBC53949254BF79F00EC89FC /* FourthVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FourthVC.xib; sourceTree = "<group>"; };
 		DBDA602E254A90070034E0C3 /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +72,7 @@
 				DBDA6037254A911D0034E0C3 /* FirstVC */,
 				DBDA6036254A90F70034E0C3 /* SecondVC */,
 				DBC53931254ABEC200EC89FC /* ThirdVC */,
+				DBC53943254BF10900EC89FC /* FourthVC */,
 				DB927535254A8074002D5DC2 /* Assets.xcassets */,
 				DB927537254A8074002D5DC2 /* LaunchScreen.storyboard */,
 				DB92753A254A8074002D5DC2 /* Info.plist */,
@@ -83,6 +88,15 @@
 				DBC5392D254ABEB600EC89FC /* ThirdVC.xib */,
 			);
 			path = ThirdVC;
+			sourceTree = "<group>";
+		};
+		DBC53943254BF10900EC89FC /* FourthVC */ = {
+			isa = PBXGroup;
+			children = (
+				DBC5393D254BF0C600EC89FC /* FourthVC.swift */,
+				DBC53949254BF79F00EC89FC /* FourthVC.xib */,
+			);
+			path = FourthVC;
 			sourceTree = "<group>";
 		};
 		DBDA6036254A90F70034E0C3 /* SecondVC */ = {
@@ -160,6 +174,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBC5394A254BF79F00EC89FC /* FourthVC.xib in Resources */,
 				DBC53936254AC3C000EC89FC /* SecondVC.xib in Resources */,
 				DBC5392F254ABEB600EC89FC /* ThirdVC.xib in Resources */,
 				DB927539254A8074002D5DC2 /* LaunchScreen.storyboard in Resources */,
@@ -180,6 +195,7 @@
 				DB92752D254A8073002D5DC2 /* AppDelegate.swift in Sources */,
 				DBC5391A254AA38A00EC89FC /* RouterManager.swift in Sources */,
 				DBDA602F254A90070034E0C3 /* SecondVC.swift in Sources */,
+				DBC5393E254BF0C600EC89FC /* FourthVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

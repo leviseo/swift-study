@@ -8,6 +8,10 @@
 import UIKit
 
 class ThirdVC: UIViewController {
+    
+    @IBOutlet weak var btn1: UIButton!
+    @IBOutlet weak var btn2: UIButton!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,6 +19,13 @@ class ThirdVC: UIViewController {
         // Do any additional setup after loading the view.
         
         print("ThirdVC did load")
+    }
+    
+    @IBAction func btn1Click(_ sender: Any) {
+        RouterManager.shared.moveToFirstVC()
+    }
+    @IBAction func btn2Click(_ sender: Any) {
+        RouterManager.shared.moveToSecondVC()
     }
     
     // view life cycle

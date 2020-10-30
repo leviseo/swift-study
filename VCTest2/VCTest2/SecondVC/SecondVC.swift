@@ -9,12 +9,23 @@ import UIKit
 
 class SecondVC: UIViewController {
     
+    @IBOutlet weak var btn1: UIButton!
+    @IBOutlet weak var btn3: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print("SecondVC did load")
         
 //        view.backgroundColor = .cyan
+        
+    }
+    
+    @IBAction func btn1Click(_ sender: Any) {
+        RouterManager.shared.moveToFirstVC()
+    }
+    @IBAction func btn3Click(_ sender: Any) {
+        RouterManager.shared.moveToThirdVC()
     }
     
     // view life cycle

@@ -9,13 +9,28 @@ import Foundation
 import UIKit
 
 class RouterManager {
+    
     static let shared = RouterManager()
 
     var window = UIApplication.shared.windows.first { $0.isKeyWindow }
+    
+    func moveToFirstVC() {
+        let vc = FirstVC()
+        let nav = UINavigationController(rootViewController: vc)
+        self.window!.rootViewController = nav
+    }
+    
+    func moveToSecondVC() {
+        let vc = SecondVC()
+        let nav = UINavigationController(rootViewController: vc)
+        self.window!.rootViewController = nav
+    }
     
     func moveToThirdVC() {
         let vc = ThirdVC()
         let nav = UINavigationController(rootViewController: vc)
         self.window!.rootViewController = nav
     }
+    
+    
 }

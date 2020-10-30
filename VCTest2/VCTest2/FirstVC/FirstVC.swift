@@ -9,9 +9,8 @@ import UIKit
 
 class FirstVC: UIViewController {
     
-//    var window = UIApplication.shared.windows.first { $0.isKeyWindow }
-    
     @IBOutlet weak var btn: UIButton!
+    @IBOutlet weak var btn2: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +24,9 @@ class FirstVC: UIViewController {
     
     @IBAction func btnClick(_ sender: Any) {
         RouterManager.shared.moveToThirdVC()
+    }
+    @IBAction func btn2Click(_ sender: Any) {
+        RouterManager.shared.moveToSecondVC()
     }
     
 // view life cycle

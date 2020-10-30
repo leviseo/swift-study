@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FourthVC" customModule="VCTest2" customModuleProvider="target">
             <connections>
+                <outlet property="closeBtn" destination="f9X-Mx-awv" id="LjQ-he-e8l"/>
                 <outlet property="view" destination="iN0-l3-epB" id="pZY-ex-XT0"/>
             </connections>
         </placeholder>
@@ -17,8 +18,24 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9X-Mx-awv">
+                    <rect key="frame" x="20" y="64" width="374" height="30"/>
+                    <state key="normal" title="close">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="closeBtnClick:" destination="-1" eventType="touchUpInside" id="hBl-Kt-jnn"/>
+                    </connections>
+                </button>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBlueColor"/>
+            <constraints>
+                <constraint firstItem="f9X-Mx-awv" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="24g-89-7sQ"/>
+                <constraint firstItem="f9X-Mx-awv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="sZi-vc-WGT"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="f9X-Mx-awv" secondAttribute="trailing" constant="20" id="zFq-hd-Zk1"/>
+            </constraints>
             <point key="canvasLocation" x="141" y="154"/>
         </view>
     </objects>

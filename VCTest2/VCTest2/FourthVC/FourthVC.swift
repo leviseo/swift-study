@@ -8,11 +8,16 @@
 import UIKit
 
 class FourthVC: UIViewController {
+    @IBOutlet weak var closeBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "4VC"
         print("4VC did load")
+    }
+    
+    @IBAction func closeBtnClick(_ sender: Any) {
+        self.dismiss(animated: true)
     }
     
     // view life cycle

@@ -36,7 +36,4 @@ class RouterManager {
         let vc = FourthVC()
         self.window?.rootViewController?.present(vc, animated: true)
     }
-    
-    
-    
 }

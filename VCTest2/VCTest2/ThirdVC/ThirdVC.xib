@@ -20,29 +20,33 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aa-ry-EiV">
-                    <rect key="frame" x="20" y="125" width="374" height="30"/>
-                    <state key="normal" title="FirstVC"/>
-                    <connections>
-                        <action selector="btn1Click:" destination="-1" eventType="touchUpInside" id="nRZ-UN-BYQ"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWR-iL-FcL">
-                    <rect key="frame" x="20" y="195" width="374" height="30"/>
-                    <state key="normal" title="SecondVC"/>
-                    <connections>
-                        <action selector="btn2Click:" destination="-1" eventType="touchUpInside" id="njg-Sj-ttN"/>
-                    </connections>
-                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zna-tc-o4h">
+                    <rect key="frame" x="20" y="64" width="374" height="778"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aa-ry-EiV">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="389"/>
+                            <state key="normal" title="FirstVC"/>
+                            <connections>
+                                <action selector="btn1Click:" destination="-1" eventType="touchUpInside" id="nRZ-UN-BYQ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWR-iL-FcL">
+                            <rect key="frame" x="0.0" y="389" width="374" height="389"/>
+                            <state key="normal" title="SecondVC"/>
+                            <connections>
+                                <action selector="btn2Click:" destination="-1" eventType="touchUpInside" id="njg-Sj-ttN"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemYellowColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sWR-iL-FcL" secondAttribute="trailing" constant="20" id="4Hl-Rn-gK4"/>
-                <constraint firstItem="sWR-iL-FcL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="6GH-hA-1Ce"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4aa-ry-EiV" secondAttribute="trailing" constant="20" id="8eg-Fn-qez"/>
-                <constraint firstItem="4aa-ry-EiV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="I7T-D2-EqD"/>
-                <constraint firstItem="sWR-iL-FcL" firstAttribute="top" secondItem="4aa-ry-EiV" secondAttribute="bottom" constant="40" id="zbo-tp-sbC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zna-tc-o4h" secondAttribute="trailing" constant="20" id="Ta6-Sb-EfO"/>
+                <constraint firstItem="zna-tc-o4h" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="ULR-QA-XPU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="zna-tc-o4h" secondAttribute="bottom" constant="20" id="w8w-Ae-zTD"/>
+                <constraint firstItem="zna-tc-o4h" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="wUc-7w-FQM"/>
             </constraints>
             <point key="canvasLocation" x="141" y="145"/>
         </view>

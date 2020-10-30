@@ -15,10 +15,9 @@ class ThirdVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-        
-        print("ThirdVC did load")
+        self.title = "3VC"
+        print("3VC did load")
     }
     
     @IBAction func btn1Click(_ sender: Any) {
@@ -31,26 +30,26 @@ class ThirdVC: UIViewController {
     // view life cycle
         override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
-            print("ThirdVC will appear")
+            print("3VC will appear")
         }
         
         override func viewDidAppear(_ animated: Bool) {
             super.viewDidAppear(animated)
-            print("ThirdVC did appear")
+            print("3VC did appear")
         }
         
         override func viewWillDisappear(_ animated: Bool) {
             super.viewWillDisappear(animated)
-            print("ThirdVC will disappear")
+            print("3VC will disappear")
         }
         
         override func viewDidDisappear(_ animated: Bool) {
             super.viewDidDisappear(animated)
-            print("ThirdVC did disappear")
+            print("3VC did disappear")
         }
         
         deinit {
-            print("ThirdVC deinit")
+            print("3VC deinit")
         }
 
 

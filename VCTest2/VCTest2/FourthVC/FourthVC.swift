@@ -11,31 +11,32 @@ class FourthVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("FourthVC did load")
+        self.title = "4VC"
+        print("4VC did load")
     }
     
     // view life cycle
         override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
-            print("FourthVC will appear")
+            print("4VC will appear")
         }
         
         override func viewDidAppear(_ animated: Bool) {
             super.viewDidAppear(animated)
-            print("FourthVC did appear")
+            print("4VC did appear")
         }
         
         override func viewWillDisappear(_ animated: Bool) {
             super.viewWillDisappear(animated)
-            print("FourthVC will disappear")
+            print("4VC will disappear")
         }
         
         override func viewDidDisappear(_ animated: Bool) {
             super.viewDidDisappear(animated)
-            print("FourthVC did disappear")
+            print("4VC did disappear")
         }
         
         deinit {
-            print("FourthVC deinit")
+            print("4VC deinit")
         }
 }

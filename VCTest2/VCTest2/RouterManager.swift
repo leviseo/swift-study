@@ -32,5 +32,11 @@ class RouterManager {
         self.window!.rootViewController = nav
     }
     
+    func presentFourthVC() {
+        let vc = FourthVC()
+        self.window?.rootViewController?.present(vc, animated: true)
+    }
+    
+    
     
 }

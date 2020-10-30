@@ -14,8 +14,9 @@ class SecondVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "2VC"
         
-        print("SecondVC did load")
+        print("2VC did load")
         
 //        view.backgroundColor = .cyan
         
@@ -31,25 +32,25 @@ class SecondVC: UIViewController {
     // view life cycle
         override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
-            print("SecondVC will appear")
+            print("2VC will appear")
         }
         
         override func viewDidAppear(_ animated: Bool) {
             super.viewDidAppear(animated)
-            print("SecondVC did appear")
+            print("2VC did appear")
         }
         
         override func viewWillDisappear(_ animated: Bool) {
             super.viewWillDisappear(animated)
-            print("SecondVC will disappear")
+            print("2VC will disappear")
         }
         
         override func viewDidDisappear(_ animated: Bool) {
             super.viewDidDisappear(animated)
-            print("SecondVC did disappear")
+            print("2VC did disappear")
         }
         
         deinit {
-            print("SecondVC deinit")
+            print("2VC deinit")
         }
 }

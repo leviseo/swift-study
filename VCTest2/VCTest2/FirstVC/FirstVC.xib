@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="btn" destination="Egh-Av-5bP" id="vCh-va-dne"/>
                 <outlet property="btn2" destination="ha1-4N-kYw" id="BrH-dy-oBi"/>
+                <outlet property="btn4" destination="BCK-Ih-IIf" id="jPy-2u-MpO"/>
                 <outlet property="view" destination="iN0-l3-epB" id="IKf-eF-BWI"/>
             </connections>
         </placeholder>
@@ -20,29 +21,40 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Egh-Av-5bP">
-                    <rect key="frame" x="179" y="433" width="56" height="30"/>
-                    <state key="normal" title="ThirdVC"/>
-                    <connections>
-                        <action selector="btnClick:" destination="-1" eventType="touchUpInside" id="JBP-NF-Cdm"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ha1-4N-kYw">
-                    <rect key="frame" x="10" y="324" width="394" height="30"/>
-                    <state key="normal" title="SecondVC"/>
-                    <connections>
-                        <action selector="btn2Click:" destination="-1" eventType="touchUpInside" id="c0W-fv-kj9"/>
-                    </connections>
-                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ZQe-FV-3ua">
+                    <rect key="frame" x="20" y="64" width="374" height="778"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ha1-4N-kYw">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="259.5"/>
+                            <state key="normal" title="SecondVC"/>
+                            <connections>
+                                <action selector="btn2Click:" destination="-1" eventType="touchUpInside" id="c0W-fv-kj9"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Egh-Av-5bP">
+                            <rect key="frame" x="0.0" y="259.5" width="374" height="259"/>
+                            <state key="normal" title="ThirdVC"/>
+                            <connections>
+                                <action selector="btnClick:" destination="-1" eventType="touchUpInside" id="JBP-NF-Cdm"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCK-Ih-IIf">
+                            <rect key="frame" x="0.0" y="518.5" width="374" height="259.5"/>
+                            <state key="normal" title="4present"/>
+                            <connections>
+                                <action selector="btn4Click:" destination="-1" eventType="touchUpInside" id="Kwo-iS-MM1"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemGreenColor"/>
             <constraints>
-                <constraint firstItem="Egh-Av-5bP" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="0PP-Cs-MMz"/>
-                <constraint firstItem="Egh-Av-5bP" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="AxQ-3j-hFT"/>
-                <constraint firstItem="ha1-4N-kYw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="JPa-ty-Myk"/>
-                <constraint firstItem="ha1-4N-kYw" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="280" id="WXX-VD-ReR"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ha1-4N-kYw" secondAttribute="trailing" constant="10" id="Wli-3V-2BH"/>
+                <constraint firstItem="ZQe-FV-3ua" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="589-qo-by6"/>
+                <constraint firstItem="ZQe-FV-3ua" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="ETF-Vb-KdL"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ZQe-FV-3ua" secondAttribute="bottom" constant="20" id="UT1-zH-Qkn"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ZQe-FV-3ua" secondAttribute="trailing" constant="20" id="fVm-dV-BDd"/>
             </constraints>
             <point key="canvasLocation" x="141" y="149"/>
         </view>

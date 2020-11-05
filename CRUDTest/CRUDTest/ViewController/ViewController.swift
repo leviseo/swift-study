@@ -11,6 +11,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var btn: UIButton!
     @IBOutlet weak var btnTable: UIButton!
+    @IBOutlet weak var btnTblView: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +27,12 @@ class ViewController: UIViewController {
         pushTableView()
     }
     
+    @IBAction func clickBtnTblView(_ sender: Any) {
+        pushTblView()
+    }
+    
     func pushView() {
-        let vc = CollectionViewController()
+        let vc = CollectionVC()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -35,6 +40,12 @@ class ViewController: UIViewController {
         let vc = TableVC()
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func pushTblView() {
+        let vc = TblView()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     
 //    view life cycle
     override func viewWillAppear(_ animated: Bool) {

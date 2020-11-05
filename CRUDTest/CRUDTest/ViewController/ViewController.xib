@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="btn" destination="GjM-y9-Ega" id="z9b-Jg-dPB"/>
                 <outlet property="btnTable" destination="8QS-SA-OBV" id="ZSH-7y-mbP"/>
+                <outlet property="btnTblView" destination="ZWw-Jd-Y5C" id="3Rw-7p-eT8"/>
                 <outlet property="view" destination="iN0-l3-epB" id="X8d-sO-djO"/>
             </connections>
         </placeholder>
@@ -34,14 +35,24 @@
                         <action selector="clickBtnTable:" destination="-1" eventType="touchUpInside" id="tV0-tI-NRr"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWw-Jd-Y5C">
+                    <rect key="frame" x="0.0" y="204" width="414" height="30"/>
+                    <state key="normal" title="TblView"/>
+                    <connections>
+                        <action selector="clickBtnTblView:" destination="-1" eventType="touchUpInside" id="UZH-3J-unw"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="8QS-SA-OBV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="HKe-HG-pqF"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8QS-SA-OBV" secondAttribute="trailing" constant="20" id="MKT-Ck-fDP"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ZWw-Jd-Y5C" secondAttribute="trailing" id="PQm-JH-Kqk"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="GjM-y9-Ega" secondAttribute="trailing" constant="20" id="Rec-NB-TFv"/>
+                <constraint firstItem="ZWw-Jd-Y5C" firstAttribute="top" secondItem="8QS-SA-OBV" secondAttribute="bottom" constant="40" id="bZ2-yH-vGI"/>
                 <constraint firstItem="GjM-y9-Ega" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="df7-0t-AJo"/>
+                <constraint firstItem="ZWw-Jd-Y5C" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="lgn-Oa-9ev"/>
                 <constraint firstItem="8QS-SA-OBV" firstAttribute="top" secondItem="GjM-y9-Ega" secondAttribute="bottom" constant="40" id="mYC-9a-WtK"/>
                 <constraint firstItem="GjM-y9-Ega" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="xwI-4J-aCX"/>
             </constraints>

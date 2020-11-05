@@ -11,12 +11,13 @@ class TableVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("tableVC viewDidLoad")
 //
 //        let cell = UINib(nibName: "TableViewCell", bundle: nil)
 //        tableView.register(cell, forCellReuseIdentifier: "TableViewCell")
         let cell = UINib(nibName: String.init(describing: TableViewCell.self), bundle: nil)
         self.tableView.register(cell, forCellReuseIdentifier: String.init(describing: TableViewCell.self))
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -86,5 +87,27 @@ class TableVC: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    //    view life cycle
+        override func viewWillAppear(_ animated: Bool) {
+            print("tableVC viewWillAppear")
+        }
+        
+        override func viewDidAppear(_ animated: Bool) {
+            print("tableVC viewDidAppear")
+        }
+        
+        override func viewWillDisappear(_ animated: Bool) {
+            print("tableVC viewWillDisappear")
+        }
+        
+        override func viewDidDisappear(_ animated: Bool) {
+            print("tableVC viewDidDisappear")
+        }
+        
+        deinit {
+            print("tableVC deinit")
+        }
     
 }

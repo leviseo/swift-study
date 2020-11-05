@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		327455FB6C4C2741EF04FDCE /* Pods_CRUDTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C1B2567847490DE36B8A755 /* Pods_CRUDTest.framework */; };
+		404BE9C425545F3600E94234 /* TblView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404BE9C225545F3600E94234 /* TblView.swift */; };
+		404BE9C525545F3600E94234 /* TblView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 404BE9C325545F3600E94234 /* TblView.xib */; };
+		404BE9CB255462E200E94234 /* TblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404BE9C9255462E200E94234 /* TblCell.swift */; };
+		404BE9CC255462E200E94234 /* TblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 404BE9CA255462E200E94234 /* TblCell.xib */; };
+		40BF479E2554452700E3845B /* CollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BF479C2554452700E3845B /* CollectionVC.swift */; };
+		40BF479F2554452700E3845B /* CollectionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40BF479D2554452700E3845B /* CollectionVC.xib */; };
 		DBA190082553ED8400A81277 /* TableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA190062553ED8400A81277 /* TableVC.swift */; };
 		DBA190092553ED8400A81277 /* TableVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBA190072553ED8400A81277 /* TableVC.xib */; };
 		DBA1900F2553EE3800A81277 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA1900D2553EE3800A81277 /* TableViewCell.swift */; };
 		DBA190102553EE3800A81277 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBA1900E2553EE3800A81277 /* TableViewCell.xib */; };
-		DBA190282553FE0400A81277 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA190262553FE0400A81277 /* CollectionViewController.swift */; };
-		DBA190292553FE0400A81277 /* CollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBA190272553FE0400A81277 /* CollectionViewController.xib */; };
 		DBE01E4E2553D2D80049D733 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBE01E4D2553D2D80049D733 /* ViewController.xib */; };
 		DBE1AD6D2552E14B00C89E05 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE1AD6C2552E14B00C89E05 /* CollectionCell.swift */; };
 		DBE1AD702552E17600C89E05 /* CollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBE1AD6F2552E17600C89E05 /* CollectionCell.xib */; };
@@ -26,13 +30,17 @@
 /* Begin PBXFileReference section */
 		0C1B2567847490DE36B8A755 /* Pods_CRUDTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CRUDTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		267F029972F0BE9BA2AE320A /* Pods-CRUDTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRUDTest.release.xcconfig"; path = "Target Support Files/Pods-CRUDTest/Pods-CRUDTest.release.xcconfig"; sourceTree = "<group>"; };
+		404BE9C225545F3600E94234 /* TblView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TblView.swift; sourceTree = "<group>"; };
+		404BE9C325545F3600E94234 /* TblView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TblView.xib; sourceTree = "<group>"; };
+		404BE9C9255462E200E94234 /* TblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TblCell.swift; sourceTree = "<group>"; };
+		404BE9CA255462E200E94234 /* TblCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TblCell.xib; sourceTree = "<group>"; };
+		40BF479C2554452700E3845B /* CollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionVC.swift; sourceTree = "<group>"; };
+		40BF479D2554452700E3845B /* CollectionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionVC.xib; sourceTree = "<group>"; };
 		6BFAB07736E4A2C1244304FF /* Pods-CRUDTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRUDTest.debug.xcconfig"; path = "Target Support Files/Pods-CRUDTest/Pods-CRUDTest.debug.xcconfig"; sourceTree = "<group>"; };
 		DBA190062553ED8400A81277 /* TableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableVC.swift; sourceTree = "<group>"; };
 		DBA190072553ED8400A81277 /* TableVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableVC.xib; sourceTree = "<group>"; };
-		DBA1900D2553EE3800A81277 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewCell.swift; path = TableViewCell/TableViewCell.swift; sourceTree = "<group>"; };
-		DBA1900E2553EE3800A81277 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TableViewCell.xib; path = TableViewCell/TableViewCell.xib; sourceTree = "<group>"; };
-		DBA190262553FE0400A81277 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
-		DBA190272553FE0400A81277 /* CollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewController.xib; sourceTree = "<group>"; };
+		DBA1900D2553EE3800A81277 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		DBA1900E2553EE3800A81277 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		DBE01E4D2553D2D80049D733 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		DBE1AD6C2552E14B00C89E05 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		DBE1AD6F2552E17600C89E05 /* CollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionCell.xib; sourceTree = "<group>"; };
@@ -65,6 +73,34 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		404BE9C725545F3D00E94234 /* TblView */ = {
+			isa = PBXGroup;
+			children = (
+				404BE9CE255462E500E94234 /* TblCell */,
+				404BE9C225545F3600E94234 /* TblView.swift */,
+				404BE9C325545F3600E94234 /* TblView.xib */,
+			);
+			path = TblView;
+			sourceTree = "<group>";
+		};
+		404BE9CE255462E500E94234 /* TblCell */ = {
+			isa = PBXGroup;
+			children = (
+				404BE9C9255462E200E94234 /* TblCell.swift */,
+				404BE9CA255462E200E94234 /* TblCell.xib */,
+			);
+			path = TblCell;
+			sourceTree = "<group>";
+		};
+		40BF479B255444BF00E3845B /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DBA1900D2553EE3800A81277 /* TableViewCell.swift */,
+				DBA1900E2553EE3800A81277 /* TableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
 		75010B60F765F753E444905E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,10 +121,9 @@
 		DBA1900C2553ED8C00A81277 /* TableVC */ = {
 			isa = PBXGroup;
 			children = (
+				40BF479B255444BF00E3845B /* TableViewCell */,
 				DBA190062553ED8400A81277 /* TableVC.swift */,
 				DBA190072553ED8400A81277 /* TableVC.xib */,
-				DBA1900D2553EE3800A81277 /* TableViewCell.swift */,
-				DBA1900E2553EE3800A81277 /* TableViewCell.xib */,
 			);
 			path = TableVC;
 			sourceTree = "<group>";
@@ -97,8 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				DBE1AD722552E17A00C89E05 /* CollectionCell */,
-				DBA190262553FE0400A81277 /* CollectionViewController.swift */,
-				DBA190272553FE0400A81277 /* CollectionViewController.xib */,
+				40BF479C2554452700E3845B /* CollectionVC.swift */,
+				40BF479D2554452700E3845B /* CollectionVC.xib */,
 			);
 			path = CollectionVC;
 			sourceTree = "<group>";
@@ -140,6 +175,7 @@
 				DBA190052553ED5300A81277 /* ViewController */,
 				DBE1AD692552436F00C89E05 /* CollectionVC */,
 				DBA1900C2553ED8C00A81277 /* TableVC */,
+				404BE9C725545F3D00E94234 /* TblView */,
 			);
 			path = CRUDTest;
 			sourceTree = "<group>";
@@ -204,11 +240,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBE1AD702552E17600C89E05 /* CollectionCell.xib in Resources */,
+				404BE9C525545F3600E94234 /* TblView.xib in Resources */,
 				DBE51633254FC6E4001ABAB3 /* LaunchScreen.storyboard in Resources */,
 				DBA190102553EE3800A81277 /* TableViewCell.xib in Resources */,
 				DBE51630254FC6E4001ABAB3 /* Assets.xcassets in Resources */,
 				DBA190092553ED8400A81277 /* TableVC.xib in Resources */,
-				DBA190292553FE0400A81277 /* CollectionViewController.xib in Resources */,
+				40BF479F2554452700E3845B /* CollectionVC.xib in Resources */,
+				404BE9CC255462E200E94234 /* TblCell.xib in Resources */,
 				DBE01E4E2553D2D80049D733 /* ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,10 +302,12 @@
 			files = (
 				DBE5162B254FC6E3001ABAB3 /* ViewController.swift in Sources */,
 				DBE51627254FC6E3001ABAB3 /* AppDelegate.swift in Sources */,
-				DBA190282553FE0400A81277 /* CollectionViewController.swift in Sources */,
+				404BE9CB255462E200E94234 /* TblCell.swift in Sources */,
 				DBA1900F2553EE3800A81277 /* TableViewCell.swift in Sources */,
+				40BF479E2554452700E3845B /* CollectionVC.swift in Sources */,
 				DBA190082553ED8400A81277 /* TableVC.swift in Sources */,
 				DBE1AD6D2552E14B00C89E05 /* CollectionCell.swift in Sources */,
+				404BE9C425545F3600E94234 /* TblView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

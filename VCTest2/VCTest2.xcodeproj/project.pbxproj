@@ -77,11 +77,11 @@
 				DBDA6036254A90F70034E0C3 /* SecondVC */,
 				DBC53931254ABEC200EC89FC /* ThirdVC */,
 				DBC53943254BF10900EC89FC /* FourthVC */,
+				DBC53952254C01BE00EC89FC /* FifthVC */,
 				DB927535254A8074002D5DC2 /* Assets.xcassets */,
 				DB927537254A8074002D5DC2 /* LaunchScreen.storyboard */,
 				DB92753A254A8074002D5DC2 /* Info.plist */,
 				DBC53919254AA38A00EC89FC /* RouterManager.swift */,
-				DBC53952254C01BE00EC89FC /* FifthVC */,
 			);
 			path = VCTest2;
 			sourceTree = "<group>";

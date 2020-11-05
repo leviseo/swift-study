@@ -36,4 +36,8 @@ class RouterManager {
         let vc = FourthVC()
         self.window?.rootViewController?.present(vc, animated: true)
     }
+    
+    func pushVC(selfVC: UIViewController, pushVC: UIViewController) {
+        selfVC.navigationController?.pushViewController(pushVC, animated: true)
+    }
 }

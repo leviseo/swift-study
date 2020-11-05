@@ -13,6 +13,7 @@
                 <outlet property="btn" destination="Egh-Av-5bP" id="vCh-va-dne"/>
                 <outlet property="btn2" destination="ha1-4N-kYw" id="BrH-dy-oBi"/>
                 <outlet property="btn4" destination="BCK-Ih-IIf" id="jPy-2u-MpO"/>
+                <outlet property="btn5" destination="aAl-ZC-j8F" id="Xdf-8B-h99"/>
                 <outlet property="view" destination="iN0-l3-epB" id="IKf-eF-BWI"/>
             </connections>
         </placeholder>
@@ -25,24 +26,31 @@
                     <rect key="frame" x="20" y="64" width="374" height="778"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ha1-4N-kYw">
-                            <rect key="frame" x="0.0" y="0.0" width="374" height="259.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="194.5"/>
                             <state key="normal" title="SecondVC"/>
                             <connections>
                                 <action selector="btn2Click:" destination="-1" eventType="touchUpInside" id="c0W-fv-kj9"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Egh-Av-5bP">
-                            <rect key="frame" x="0.0" y="259.5" width="374" height="259"/>
+                            <rect key="frame" x="0.0" y="194.5" width="374" height="194.5"/>
                             <state key="normal" title="ThirdVC"/>
                             <connections>
                                 <action selector="btnClick:" destination="-1" eventType="touchUpInside" id="JBP-NF-Cdm"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCK-Ih-IIf">
-                            <rect key="frame" x="0.0" y="518.5" width="374" height="259.5"/>
+                            <rect key="frame" x="0.0" y="389" width="374" height="194.5"/>
                             <state key="normal" title="4present"/>
                             <connections>
                                 <action selector="btn4Click:" destination="-1" eventType="touchUpInside" id="Kwo-iS-MM1"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAl-ZC-j8F">
+                            <rect key="frame" x="0.0" y="583.5" width="374" height="194.5"/>
+                            <state key="normal" title="5Push"/>
+                            <connections>
+                                <action selector="btn5Click:" destination="-1" eventType="touchUpInside" id="Cm6-rU-HTp"/>
                             </connections>
                         </button>
                     </subviews>

@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FifthVC" customModule="VCTest2" customModuleProvider="target">
             <connections>
+                <outlet property="popBtn" destination="WCc-d2-T4o" id="W6t-kw-zeb"/>
                 <outlet property="view" destination="iN0-l3-epB" id="7Sf-h1-a6U"/>
             </connections>
         </placeholder>
@@ -17,8 +18,21 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCc-d2-T4o">
+                    <rect key="frame" x="192" y="433" width="30" height="30"/>
+                    <state key="normal" title="pop"/>
+                    <connections>
+                        <action selector="popBtnClick:" destination="-1" eventType="touchUpInside" id="p3P-w8-FLl"/>
+                    </connections>
+                </button>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemTealColor"/>
+            <constraints>
+                <constraint firstItem="WCc-d2-T4o" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="jge-Cg-h9D"/>
+                <constraint firstItem="WCc-d2-T4o" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="pSw-Pl-HTP"/>
+            </constraints>
             <point key="canvasLocation" x="141" y="154"/>
         </view>
     </objects>

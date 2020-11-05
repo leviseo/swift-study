@@ -12,6 +12,7 @@ class FirstVC: UIViewController {
     @IBOutlet weak var btn: UIButton!
     @IBOutlet weak var btn2: UIButton!
     @IBOutlet weak var btn4: UIButton!
+    @IBOutlet weak var btn5: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,9 @@ class FirstVC: UIViewController {
     }
     @IBAction func btn4Click(_ sender: Any) {
         RouterManager.shared.presentFourthVC()
+    }
+    @IBAction func btn5Click(_ sender: Any) {
+        RouterManager.shared.pushVC(selfVC: self, pushVC: FifthVC())
     }
     
     

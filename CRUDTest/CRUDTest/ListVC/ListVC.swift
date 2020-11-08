@@ -29,6 +29,19 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let cellNib = UINib(nibName: String.init(describing: ListCell.self), bundle: nil)
         ListTableView.register(cellNib, forCellReuseIdentifier: String.init(describing: ListCell.self))
         
+        
+        AF.request("http://192.168.0.22:3002/api/v1/singers")
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/json"])
+            .responseJSON { response in
+                switch response.result {
+                case .success:
+                    print("Validation Successful")
+                    print(response)
+                case let .failure(error):
+                    print(error)
+                }
+            }
     }
 
 }

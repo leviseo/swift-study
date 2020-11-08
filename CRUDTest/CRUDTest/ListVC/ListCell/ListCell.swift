@@ -8,16 +8,21 @@
 import UIKit
 
 class ListCell: UITableViewCell {
-
+//    @IBOutlet weak var thumb: UIImageView!
+//    @IBOutlet weak var title: UILabel!
+//    @IBOutlet weak var singer: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
+//        let url = URL(string: "https://via.placeholder.com/150")
+//        do {
+//            let data = try Data(contentsOf: url!)
+//            thumb.image = UIImage(data: data)
+//        }
+//        catch {
+//
+//        }
     }
     
 }

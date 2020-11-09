@@ -10,6 +10,8 @@ import Alamofire
 
 class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    let songs: [Song] = []
+    
     @IBOutlet var ListTableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,11 +35,12 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         AF.request("http://192.168.0.22:3002/api/v1/singers")
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
-            .responseJSON { response in
+            .response { response in
                 switch response.result {
                 case .success:
                     print("Validation Successful")
                     print(response)
+//                    Song(name: <#T##String#>, img: <#T##String#>, song: <#T##String#>)
                 case let .failure(error):
                     print(error)
                 }

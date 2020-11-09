@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		401684D62559785D00D7E1E7 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401684D52559785D00D7E1E7 /* Song.swift */; };
 		4039E7A52556D8560090D4BA /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4039E7A32556D8560090D4BA /* ListVC.swift */; };
 		4039E7A62556D8560090D4BA /* ListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4039E7A42556D8560090D4BA /* ListVC.xib */; };
 		4039E7AC2556E12B0090D4BA /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4039E7AA2556E12B0090D4BA /* ListCell.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		0685E5BA8C0F1DF1896898CF /* Pods_CRUDTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CRUDTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24E1A0739536CBB9B2D0A0CA /* Pods-CRUDTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRUDTest.release.xcconfig"; path = "Target Support Files/Pods-CRUDTest/Pods-CRUDTest.release.xcconfig"; sourceTree = "<group>"; };
+		401684D52559785D00D7E1E7 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		4039E7A32556D8560090D4BA /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 		4039E7A42556D8560090D4BA /* ListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListVC.xib; sourceTree = "<group>"; };
 		4039E7AA2556E12B0090D4BA /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
@@ -59,23 +61,40 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		4039E7A82556D8590090D4BA /* ListVC */ = {
+		401684D8255978D200D7E1E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				401684D52559785D00D7E1E7 /* Song.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		401684D9255978D900D7E1E7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				4039E7A32556D8560090D4BA /* ListVC.swift */,
 				4039E7A42556D8560090D4BA /* ListVC.xib */,
-				4039E7AF2556E12D0090D4BA /* ListCell */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4039E7A82556D8590090D4BA /* ListVC */ = {
+			isa = PBXGroup;
+			children = (
+				401684D8255978D200D7E1E7 /* Model */,
+				4039E7AF2556E12D0090D4BA /* View */,
+				401684D9255978D900D7E1E7 /* Controller */,
 			);
 			path = ListVC;
 			sourceTree = "<group>";
 		};
-		4039E7AF2556E12D0090D4BA /* ListCell */ = {
+		4039E7AF2556E12D0090D4BA /* View */ = {
 			isa = PBXGroup;
 			children = (
 				4039E7AA2556E12B0090D4BA /* ListCell.swift */,
 				4039E7AB2556E12B0090D4BA /* ListCell.xib */,
 			);
-			path = ListCell;
+			path = View;
 			sourceTree = "<group>";
 		};
 		4083063425573E1A00C0A762 /* WriteVC */ = {
@@ -243,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				401684D62559785D00D7E1E7 /* Song.swift in Sources */,
 				4083062C25573DB500C0A762 /* ViewController.swift in Sources */,
 				4039E7AC2556E12B0090D4BA /* ListCell.swift in Sources */,
 				4083063025573E1400C0A762 /* WriteVC.swift in Sources */,

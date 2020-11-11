@@ -16,9 +16,46 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A2n-jy-5St">
+                        <rect key="frame" x="20" y="10" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="vAn-tY-BP9"/>
+                            <constraint firstAttribute="width" constant="60" id="x91-HR-hpo"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCV-ja-k8A">
+                        <rect key="frame" x="90" y="10" width="210" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="song" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfW-So-rPo">
+                        <rect key="frame" x="90" y="49" width="210" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
                 <color key="backgroundColor" systemColor="systemYellowColor"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="nfW-So-rPo" secondAttribute="trailing" constant="20" id="D0P-mg-FAq"/>
+                    <constraint firstItem="SCV-ja-k8A" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="G8d-r6-ilK"/>
+                    <constraint firstItem="nfW-So-rPo" firstAttribute="leading" secondItem="A2n-jy-5St" secondAttribute="trailing" constant="10" id="HHN-tg-ISZ"/>
+                    <constraint firstAttribute="bottom" secondItem="nfW-So-rPo" secondAttribute="bottom" constant="10" id="VBH-CN-wE9"/>
+                    <constraint firstAttribute="trailing" secondItem="SCV-ja-k8A" secondAttribute="trailing" constant="20" id="WGe-J8-DUA"/>
+                    <constraint firstAttribute="bottom" secondItem="A2n-jy-5St" secondAttribute="bottom" constant="10" id="buO-NU-Y3e"/>
+                    <constraint firstItem="A2n-jy-5St" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="m80-7C-eLP"/>
+                    <constraint firstItem="SCV-ja-k8A" firstAttribute="leading" secondItem="A2n-jy-5St" secondAttribute="trailing" constant="10" id="mxd-6U-cSn"/>
+                    <constraint firstItem="A2n-jy-5St" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="nY7-AJ-qrg"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="nameLabel" destination="SCV-ja-k8A" id="exu-mn-mxy"/>
+                <outlet property="songLabel" destination="nfW-So-rPo" id="0rL-Vr-69Q"/>
+                <outlet property="thumbView" destination="A2n-jy-5St" id="CE4-nJ-qiO"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="145.98214285714286"/>
         </tableViewCell>
     </objects>

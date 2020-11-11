@@ -8,9 +8,10 @@
 import UIKit
 
 class ListCell: UITableViewCell {
-//    @IBOutlet weak var thumb: UIImageView!
-//    @IBOutlet weak var title: UILabel!
-//    @IBOutlet weak var singer: UILabel!
+    
+    @IBOutlet weak var thumbView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var songLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

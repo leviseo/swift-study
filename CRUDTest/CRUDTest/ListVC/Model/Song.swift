@@ -7,8 +7,14 @@
 
 import Foundation
 
-struct Song {
+struct Song: Codable {
     let name: String
     let img: String
     let song: String
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "name"
+        case img = "img"
+        case song = "song"
+    }
 }

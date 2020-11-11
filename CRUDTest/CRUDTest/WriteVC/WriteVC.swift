@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import Alamofire
 
 class WriteVC: UIViewController {
-
+    
+    @IBOutlet weak var writeLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

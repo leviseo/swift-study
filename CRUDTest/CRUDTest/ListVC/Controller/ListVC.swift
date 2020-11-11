@@ -10,8 +10,6 @@ import Alamofire
 
 class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let songs: [Song] = []
-    
     @IBOutlet var ListTableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -20,6 +18,7 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ListTableView.dequeueReusableCell(withIdentifier: String.init(describing: ListCell.self)) as! ListCell
+        
         return cell
     }
     
@@ -30,20 +29,34 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         let cellNib = UINib(nibName: String.init(describing: ListCell.self), bundle: nil)
         ListTableView.register(cellNib, forCellReuseIdentifier: String.init(describing: ListCell.self))
+//        get List
+        getSongArray()
         
-        
+    }
+    
+//    MARK: - AF get
+    func getSongArray() {
         AF.request("http://192.168.0.22:3002/api/v1/singers")
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
-            .response { response in
-                switch response.result {
-                case .success:
+            .response { data in
+                switch data.result {
+                case .success(let data):
                     print("Validation Successful")
-                    print(response)
-//                    Song(name: <#T##String#>, img: <#T##String#>, song: <#T##String#>)
+//                    print("type", type(of: data))
+                    
+                    do {
+                        let songArray = try JSONDecoder().decode([Song].self, from: data!)
+                        print(songArray)
+                        
+                    } catch {
+                        print("decoding Error: \(error)")
+                    }
+                   
                 case let .failure(error):
                     print(error)
                 }
+                
             }
     }
 

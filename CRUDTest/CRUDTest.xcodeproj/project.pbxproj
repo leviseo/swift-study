@@ -19,6 +19,7 @@
 		40B590C5255674A900421735 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40B590C4255674A900421735 /* Assets.xcassets */; };
 		40B590C8255674A900421735 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40B590C6255674A900421735 /* LaunchScreen.storyboard */; };
 		9C8D473BDA8BBDED499D5AD2 /* Pods_CRUDTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0685E5BA8C0F1DF1896898CF /* Pods_CRUDTest.framework */; };
+		DBE2B659255D14E4008E50E2 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE2B658255D14E4008E50E2 /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		40B590C7255674A900421735 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40B590C9255674A900421735 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C87D5C185202AFECF86BFA7 /* Pods-CRUDTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRUDTest.debug.xcconfig"; path = "Target Support Files/Pods-CRUDTest/Pods-CRUDTest.debug.xcconfig"; sourceTree = "<group>"; };
+		DBE2B658255D14E4008E50E2 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			children = (
 				40B590BB255674A800421735 /* AppDelegate.swift */,
 				4083062B25573DB500C0A762 /* ViewController.swift */,
+				DBE2B658255D14E4008E50E2 /* APIManager.swift */,
 				4039E7A82556D8590090D4BA /* ListVC */,
 				4083063425573E1A00C0A762 /* WriteVC */,
 				40B590C4255674A900421735 /* Assets.xcassets */,
@@ -268,6 +271,7 @@
 				4083063025573E1400C0A762 /* WriteVC.swift in Sources */,
 				4039E7A52556D8560090D4BA /* ListVC.swift in Sources */,
 				40B590BC255674A800421735 /* AppDelegate.swift in Sources */,
+				DBE2B659255D14E4008E50E2 /* APIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

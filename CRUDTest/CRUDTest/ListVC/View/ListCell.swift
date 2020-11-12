@@ -15,15 +15,6 @@ class ListCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-//        let url = URL(string: "https://via.placeholder.com/150")
-//        do {
-//            let data = try Data(contentsOf: url!)
-//            thumb.image = UIImage(data: data)
-//        }
-//        catch {
-//
-//        }
     }
     
 }

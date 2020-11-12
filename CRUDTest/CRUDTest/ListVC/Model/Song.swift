@@ -8,9 +8,9 @@
 import Foundation
 
 struct Song: Codable {
-    let name: String
-    let img: String
-    let song: String
+    var name: String
+    var img: String
+    var song: String
     
     enum CodingKeys: String, CodingKey {
         case name = "name"

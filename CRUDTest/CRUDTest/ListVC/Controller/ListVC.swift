@@ -33,7 +33,7 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ListTableView.dequeueReusableCell(withIdentifier: String.init(describing: ListCell.self)) as!  ListCell
-        
+
         cell.nameLabel.text = songs[indexPath.row].name
         cell.songLabel.text = songs[indexPath.row].song
         
@@ -49,10 +49,22 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        print("삭제됨")
+    }
+    
     //    MARK: - AF get
     func getSongArray() {
-        let url = "http://172.25.101.206:3002/api/v1/singers"
-    //        let url = "http://192.168.0.22:3002/api/v1/singers"
+//        let url = "http://172.25.101.206:3002/api/v1/singers"
+        let url = "http://192.168.0.22:3002/api/v1/singers"
         
         AF.request(url)
             .validate(statusCode: 200..<300)
@@ -82,22 +94,22 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-//// MARK: -
-//extension ListVC {
-//    override func viewWillAppear(_ animated: Bool) {
-//        print("List viewWillAppear")
-//    }
-//
-//    override func viewDidAppear(_ animated: Bool) {
-//        print("List viewDidAppear")
-//    }
-//
-//    override func viewWillDisappear(_ animated: Bool) {
-//        print("List viewWillDisappear")
-//    }
-//
-//    override func viewDidDisappear(_ animated: Bool) {
-//        print("List viewDidDisappear")
-//    }
-//}
+// MARK: -
+extension ListVC {
+    override func viewWillAppear(_ animated: Bool) {
+        print("ListVC viewWillAppear")
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        print("ListVC viewDidAppear")
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        print("ListVC viewWillDisappear")
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        print("ListVC viewDidDisappear")
+    }
+}
 

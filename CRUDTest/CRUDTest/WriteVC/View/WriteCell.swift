@@ -8,6 +8,8 @@
 import UIKit
 
 class WriteCell: UITableViewCell {
+    @IBOutlet weak var nameTF: UITextField!
+    @IBOutlet weak var songTF: UITextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()

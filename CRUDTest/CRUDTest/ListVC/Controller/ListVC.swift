@@ -59,13 +59,15 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         print("삭제됨")
+//        var songID: String = "aaaa"
+//        deleteSongArrary(songID: songID)
     }
-    
+
+//    MARK: - API
+    let url = "http://172.25.101.206:3002/api/v1/singers"
+//        let url = "http://192.168.0.22:3002/api/v1/singers"
     //    MARK: - AF get
     func getSongArray() {
-//        let url = "http://172.25.101.206:3002/api/v1/singers"
-        let url = "http://192.168.0.22:3002/api/v1/singers"
-        
         AF.request(url)
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
@@ -92,6 +94,35 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 }
             }
     }
+    
+//    MARK: - AF delete
+//    func deleteSongArrary(songID: String) {
+//        AF.request("\(url + songID)", method: .delete)
+//            .validate(statusCode: 200..<300)
+//            .validate(contentType: ["application/json"])
+//            .response { data in
+//                switch data.result {
+//                case .success(let data):
+//                    print("success: \(songID)")
+//
+////                    do {
+////                        let data = try JSONDecoder().decode([Song].self, from: data!)
+////                        self.songs = data
+////                        print(type(of: self.songs))
+////
+////                        DispatchQueue.main.async {
+////                            self.ListTableView.reloadData()
+////                        }
+////
+////                    } catch {
+////                        print("decoding Error: \(error)")
+////                    }
+//
+//                case let .failure(error):
+//                    print(error)
+//                }
+//            }
+//    }
 }
 
 // MARK: -

@@ -16,14 +16,10 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        self.title = "List"
         
         let cellNib = UINib(nibName: String.init(describing: ListCell.self), bundle: nil)
         ListTableView.register(cellNib, forCellReuseIdentifier: String.init(describing: ListCell.self))
         
-//        get List
-        getSongArray()
     }
 
     //    MARK: - tableView
@@ -59,13 +55,22 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         print("삭제됨")
-//        var songID: String = "aaaa"
-//        deleteSongArrary(songID: songID)
+        let songID = songs[indexPath.row].id
+        
+        AF.request(url + "/" + songID, method: .delete)
+            .validate(statusCode: 200..<300)
+            .response { response in
+                print(response)
+            }
+        
+        getSongArray()
+        
     }
 
 //    MARK: - API
     let url = "http://172.25.101.206:3002/api/v1/singers"
 //        let url = "http://192.168.0.22:3002/api/v1/singers"
+   
     //    MARK: - AF get
     func getSongArray() {
         AF.request(url)
@@ -79,7 +84,7 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     do {
                         let data = try JSONDecoder().decode([Song].self, from: data!)
                         self.songs = data
-                        print(type(of: self.songs))
+                        print(self.songs)
                         
                         DispatchQueue.main.async {
                             self.ListTableView.reloadData()
@@ -94,41 +99,13 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 }
             }
     }
-    
-//    MARK: - AF delete
-//    func deleteSongArrary(songID: String) {
-//        AF.request("\(url + songID)", method: .delete)
-//            .validate(statusCode: 200..<300)
-//            .validate(contentType: ["application/json"])
-//            .response { data in
-//                switch data.result {
-//                case .success(let data):
-//                    print("success: \(songID)")
-//
-////                    do {
-////                        let data = try JSONDecoder().decode([Song].self, from: data!)
-////                        self.songs = data
-////                        print(type(of: self.songs))
-////
-////                        DispatchQueue.main.async {
-////                            self.ListTableView.reloadData()
-////                        }
-////
-////                    } catch {
-////                        print("decoding Error: \(error)")
-////                    }
-//
-//                case let .failure(error):
-//                    print(error)
-//                }
-//            }
-//    }
 }
 
-// MARK: -
+// MARK: - view life cycle
 extension ListVC {
     override func viewWillAppear(_ animated: Bool) {
         print("ListVC viewWillAppear")
+        getSongArray()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -143,4 +120,3 @@ extension ListVC {
         print("ListVC viewDidDisappear")
     }
 }
-

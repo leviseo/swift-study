@@ -8,15 +8,15 @@
 import Foundation
 
 struct Song: Codable {
+    var id: String
     var name: String
     var img: String
     var song: String
     
     enum CodingKeys: String, CodingKey {
+        case id = "id"
         case name = "name"
         case img = "img"
         case song = "song"
     }
 }
-
-

@@ -14,12 +14,13 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var songs: [Song] = []
     
+    var isFirstCall: Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let cellNib = UINib(nibName: String.init(describing: ListCell.self), bundle: nil)
         ListTableView.register(cellNib, forCellReuseIdentifier: String.init(describing: ListCell.self))
-        
     }
 
     //    MARK: - tableView
@@ -55,15 +56,17 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         print("삭제됨")
-        let songID = songs[indexPath.row].id
         
+        print("\(indexPath.row)")
+        
+        let songID = songs[indexPath.row].id
         AF.request(url + "/" + songID, method: .delete)
             .validate(statusCode: 200..<300)
             .response { response in
                 print(response)
             }
         
-        getSongArray()
+        getSongArray(indexPath)
         
     }
 
@@ -72,23 +75,52 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 //        let url = "http://192.168.0.22:3002/api/v1/singers"
    
     //    MARK: - AF get
-    func getSongArray() {
+    func getSongArray(_ indexPath: IndexPath? = nil) {
         AF.request(url)
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
-            .response { data in
+            .response { [weak self] data in
                 switch data.result {
                 case .success(let data):
                     print("Validation Successful")
                     
+                    guard let self = self else {
+                        return
+                    }
+                    
                     do {
-                        let data = try JSONDecoder().decode([Song].self, from: data!)
-                        self.songs = data
+                        let serverData = try JSONDecoder().decode([Song].self, from: data!)
+                        
+                        if self.isFirstCall { // 처음 불러왔을 때
+                            DispatchQueue.main.async {
+                                self.ListTableView.reloadData()
+                            }
+                            self.isFirstCall = false
+                            self.songs = serverData
+                        }
+                        else {
+                            if self.songs.count == serverData.count {
+                                return
+                            }
+                            else if self.songs.count > serverData.count { // row delete 했을 때
+                                self.songs = serverData
+                                
+                                self.ListTableView.beginUpdates()
+                                self.ListTableView.deleteRows(at: [indexPath!], with: UITableView.RowAnimation.left)
+                                self.ListTableView.endUpdates()
+                                
+                            }
+                            else { // write 에서 추가 했을 때
+                                self.songs = serverData
+                                
+                            }
+                        }
+                        
+                        
+                        
                         print(self.songs)
                         
-                        DispatchQueue.main.async {
-                            self.ListTableView.reloadData()
-                        }
+                        
                         
                     } catch {
                         print("decoding Error: \(error)")

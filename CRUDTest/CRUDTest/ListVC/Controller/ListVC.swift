@@ -46,6 +46,11 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    
+    
+    
+    
+    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -99,19 +104,37 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                             self.songs = serverData
                         }
                         else {
+                            
+                            // 2개 배열 비교 달라진 인덱스 배열을 가져옴.
+                            
                             if self.songs.count == serverData.count {
                                 return
                             }
                             else if self.songs.count > serverData.count { // row delete 했을 때
-                                self.songs = serverData
-                                
-                                self.ListTableView.beginUpdates()
-                                self.ListTableView.deleteRows(at: [indexPath!], with: UITableView.RowAnimation.left)
-                                self.ListTableView.endUpdates()
+                                DispatchQueue.main.async {
+                                    
+                                    let arrayIndexPath: [IndexPath] = [indexPath!]
+                                    self.songs = serverData
+                                    
+                                    self.ListTableView.beginUpdates()
+                                    self.ListTableView.deleteRows(at: arrayIndexPath, with: UITableView.RowAnimation.left)
+                                    self.ListTableView.endUpdates()
+                                }
                                 
                             }
                             else { // write 에서 추가 했을 때
-                                self.songs = serverData
+                                
+                                DispatchQueue.main.async {
+                                    
+                                    let insertIndexPath = IndexPath(row: self.songs.count, section: 0)
+                                    let arrayIndexPath: [IndexPath] = [insertIndexPath]
+                                    self.songs = serverData
+                                    self.ListTableView.beginUpdates()
+                                    self.ListTableView.insertRows(at: arrayIndexPath, with: UITableView.RowAnimation.left)
+                                    self.ListTableView.endUpdates()
+                                    
+                                    self.ListTableView.scrollToRow(at: arrayIndexPath.last!, at: UITableView.ScrollPosition.bottom, animated: true)
+                                }
                                 
                             }
                         }

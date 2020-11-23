@@ -33,6 +33,10 @@ class WriteVC: UIViewController, UITextViewDelegate {
         let img: String = imgField.text!
         let song: String = songField.text!
         
+        if imgField.text == "" {
+            let img = "http://via.placeholder.com/60"
+        }
+        
         createSong(name: name, img: img, song: song)
     }
     

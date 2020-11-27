@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 
-class WriteVC: UIViewController, UITextViewDelegate {
+class WriteVC: UIViewController, UITextViewDelegate, UITextFieldDelegate {
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var imgField: UITextField!
     @IBOutlet weak var songField: UITextField!
@@ -16,12 +16,17 @@ class WriteVC: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.songField.delegate = self
         self.submitBtn.isEnabled = false
+        self.nameField.becomeFirstResponder() // 처음 진입 시 이름 입력에 포커스
+    }
+    
+    deinit {
+        print("WriteVC deinit")
     }
     
     @IBAction func editChanged(_ sender: UITextField) {
-        if (nameField.text != "" && imgField.text != "" && songField.text != "") {
+        if (nameField.text != "" && songField.text != "") {
             self.submitBtn.isEnabled = true
         } else {
             self.submitBtn.isEnabled = false
@@ -29,18 +34,28 @@ class WriteVC: UIViewController, UITextViewDelegate {
     }
    
     @IBAction func submit(_ sender: Any) {
-        let name: String = nameField.text!
-        let img: String = imgField.text!
-        let song: String = songField.text!
-        
-        if imgField.text == "" {
-            let img = "http://via.placeholder.com/60"
-        }
-        
-        createSong(name: name, img: img, song: song)
+        write()
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        songField.resignFirstResponder()
+        write()
+        return true
+    }
 //    MARK: - 새 음악 등록
+    func write() {
+        let name: String = nameField.text!
+        let song: String = songField.text!
+        let img: String = imgField.text!.isEmpty ? "http://via.placeholder.com/60" : imgField.text!
+        
+        createSong(name: name, img: img, song: song)
+        
+        nameField.text = ""
+        songField.text = ""
+        imgField.text = ""
+    }
+    
+//    MARK: - 새 음악 등록 통신
     func createSong(name: String, img: String, song: String) {
         let parameters: [String : String] = [
             "name": name,
@@ -48,14 +63,11 @@ class WriteVC: UIViewController, UITextViewDelegate {
             "song": song
         ]
         
-        //    MARK: - API
-        let url = "http://172.25.101.206:3002/api/v1/singers"
-//        let url = "http://192.168.0.22:3002/api/v1/singers"
-        
+        //    MARK: - API        
         AF.request(url, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default)
             .validate(statusCode: 200..<300)
             .response { response in
-                print(response)
+                print(parameters)
             }
     }
     
@@ -64,8 +76,6 @@ class WriteVC: UIViewController, UITextViewDelegate {
 extension WriteVC {
     override func viewWillAppear(_ animated: Bool) {
         print("WriteVC viewWillAppear")
-//        처음 진입 시 이름 입력에 포커스
-        self.nameField.becomeFirstResponder()
     }
 
     override func viewDidAppear(_ animated: Bool) {

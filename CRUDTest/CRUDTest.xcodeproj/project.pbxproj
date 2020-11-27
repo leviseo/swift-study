@@ -21,6 +21,8 @@
 		40B590C5255674A900421735 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40B590C4255674A900421735 /* Assets.xcassets */; };
 		40B590C8255674A900421735 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40B590C6255674A900421735 /* LaunchScreen.storyboard */; };
 		9C8D473BDA8BBDED499D5AD2 /* Pods_CRUDTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0685E5BA8C0F1DF1896898CF /* Pods_CRUDTest.framework */; };
+		DB6E568C2570EF92007BA824 /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6E568A2570EF92007BA824 /* EditVC.swift */; };
+		DB6E568D2570EF92007BA824 /* EditVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB6E568B2570EF92007BA824 /* EditVC.xib */; };
 		DBE2B659255D14E4008E50E2 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE2B658255D14E4008E50E2 /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,8 @@
 		40B590C7255674A900421735 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40B590C9255674A900421735 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C87D5C185202AFECF86BFA7 /* Pods-CRUDTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRUDTest.debug.xcconfig"; path = "Target Support Files/Pods-CRUDTest/Pods-CRUDTest.debug.xcconfig"; sourceTree = "<group>"; };
+		DB6E568A2570EF92007BA824 /* EditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVC.swift; sourceTree = "<group>"; };
+		DB6E568B2570EF92007BA824 /* EditVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditVC.xib; sourceTree = "<group>"; };
 		DBE2B658255D14E4008E50E2 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,6 +160,7 @@
 				DBE2B658255D14E4008E50E2 /* APIManager.swift */,
 				4039E7A82556D8590090D4BA /* ListVC */,
 				4083063425573E1A00C0A762 /* WriteVC */,
+				DB6E568F2570EF96007BA824 /* EditVC */,
 				40B590C4255674A900421735 /* Assets.xcassets */,
 				40B590C6255674A900421735 /* LaunchScreen.storyboard */,
 				40B590C9255674A900421735 /* Info.plist */,
@@ -169,6 +174,15 @@
 				0685E5BA8C0F1DF1896898CF /* Pods_CRUDTest.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB6E568F2570EF96007BA824 /* EditVC */ = {
+			isa = PBXGroup;
+			children = (
+				DB6E568A2570EF92007BA824 /* EditVC.swift */,
+				DB6E568B2570EF92007BA824 /* EditVC.xib */,
+			);
+			path = EditVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +248,7 @@
 				4039E7AD2556E12B0090D4BA /* ListCell.xib in Resources */,
 				40B590C5255674A900421735 /* Assets.xcassets in Resources */,
 				4083063125573E1400C0A762 /* WriteVC.xib in Resources */,
+				DB6E568D2570EF92007BA824 /* EditVC.xib in Resources */,
 				4039E7A62556D8560090D4BA /* ListVC.xib in Resources */,
 				40B25EBA255D8F1100E960C0 /* WriteCell.xib in Resources */,
 			);
@@ -289,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				401684D62559785D00D7E1E7 /* Song.swift in Sources */,
+				DB6E568C2570EF92007BA824 /* EditVC.swift in Sources */,
 				4083062C25573DB500C0A762 /* ViewController.swift in Sources */,
 				4039E7AC2556E12B0090D4BA /* ListCell.swift in Sources */,
 				4083063025573E1400C0A762 /* WriteVC.swift in Sources */,

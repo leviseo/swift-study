@@ -21,6 +21,12 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         let cellNib = UINib(nibName: String.init(describing: ListCell.self), bundle: nil)
         ListTableView.register(cellNib, forCellReuseIdentifier: String.init(describing: ListCell.self))
+        
+//        initRefresh() full to refresh
+    }
+    
+    deinit {
+        print("ListVC deinit")
     }
 
     //    MARK: - tableView
@@ -33,10 +39,11 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
         cell.nameLabel.text = songs[indexPath.row].name
         cell.songLabel.text = songs[indexPath.row].song
-        
-        let thumbnail = songs[indexPath.row].img
+    
+        let thumbnail: String = songs[indexPath.row].img
         
         let url = URL(string: String(thumbnail))
+        
         do {
             let data = try Data(contentsOf: url!)
             cell.thumbView.image = UIImage(data: data)
@@ -46,38 +53,73 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    
-    
-    
-    
-    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .delete
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title:  "delete", handler: { [self] (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            // Call edit action
+            let songID = songs[indexPath.row].id
+            AF.request(url + "/" + songID, method: .delete)
+                .validate(statusCode: 200..<300)
+                .response { response in
+                    print(response)
+                }
+    
+            getSongArray(indexPath)
+            // Reset state
+            success(true)
+        })
+        let editAction = UIContextualAction(style: .normal, title:  "edit", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            // Call edit action
+            // Reset state
+            success(true)
+        })
+        
+        return UISwipeActionsConfiguration(actions:[deleteAction, editAction])
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        print("삭제됨")
-        
-        print("\(indexPath.row)")
-        
-        let songID = songs[indexPath.row].id
-        AF.request(url + "/" + songID, method: .delete)
-            .validate(statusCode: 200..<300)
-            .response { response in
-                print(response)
-            }
-        
-        getSongArray(indexPath)
-        
-    }
+//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+//        return .delete
+//    }
+//
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        print("삭제됨")
+//
+//        print("\(indexPath.row)")
+//
+//        let songID = songs[indexPath.row].id
+//        AF.request(url + "/" + songID, method: .delete)
+//            .validate(statusCode: 200..<300)
+//            .response { response in
+//                print(response)
+//            }
+//
+//        getSongArray(indexPath)
+//
+//    }
 
-//    MARK: - API
-    let url = "http://172.25.101.206:3002/api/v1/singers"
-//        let url = "http://192.168.0.22:3002/api/v1/singers"
+// MARK: - full to refresh
+//    func initRefresh() {
+//        let refresh = UIRefreshControl()
+//        refresh.addTarget(self, action: #selector(updateUI(refresh:)), for: .valueChanged)
+//        refresh.attributedTitle = NSAttributedString(string: "새로고침")
+//
+//        if #available(iOS 10.0, *) {
+//            ListTableView.refreshControl = refresh
+//        } else {
+//            ListTableView.addSubview(refresh)
+//        }
+//    }
+//
+//    @objc func updateUI(refresh:UIRefreshControl) {
+//        refresh.endRefreshing()
+//        ListTableView.reloadData()
+//        getSongArray()
+//        print("new : \(songs)")
+//    }
+
    
     //    MARK: - AF get
     func getSongArray(_ indexPath: IndexPath? = nil) {

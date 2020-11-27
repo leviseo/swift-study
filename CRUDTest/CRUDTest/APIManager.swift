@@ -5,8 +5,12 @@
 //  Created by Levi on 2020/11/12.
 //
 
-//import Foundation
+import UIKit
 //import Alamofire
+
+// local url
+let url = "http://172.25.101.206:3002/api/v1/singers"
+//let url = "http://192.168.0.3:3002/api/v1/singers"
 //
 //class APIManager {
 //    static let shared = APIManager()

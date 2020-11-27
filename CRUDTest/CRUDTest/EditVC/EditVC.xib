@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditVC" customModule="CRUDTest" customModuleProvider="target">
+            <connections>
+                <outlet property="editBtn" destination="dqe-k8-wJv" id="dol-C7-gDm"/>
+                <outlet property="imgField" destination="sRH-aO-YPa" id="R5W-YK-42o"/>
+                <outlet property="nameField" destination="AWS-QA-oAX" id="7aR-I3-f3x"/>
+                <outlet property="songField" destination="HVN-Rd-8wT" id="dsi-ww-G83"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AWS-QA-oAX">
+                    <rect key="frame" x="20" y="84" width="374" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="img" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sRH-aO-YPa">
+                    <rect key="frame" x="20" y="138" width="374" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="song" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HVN-Rd-8wT">
+                    <rect key="frame" x="20" y="192" width="374" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqe-k8-wJv">
+                    <rect key="frame" x="20" y="246" width="374" height="30"/>
+                    <color key="backgroundColor" systemColor="systemTealColor"/>
+                    <state key="normal" title="Edit"/>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HVN-Rd-8wT" secondAttribute="trailing" constant="20" id="21S-iE-ud0"/>
+                <constraint firstItem="HVN-Rd-8wT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="2a0-E6-rtR"/>
+                <constraint firstItem="dqe-k8-wJv" firstAttribute="top" secondItem="HVN-Rd-8wT" secondAttribute="bottom" constant="20" id="9KH-cl-4gG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dqe-k8-wJv" secondAttribute="trailing" constant="20" id="Iqs-Bw-RSD"/>
+                <constraint firstItem="AWS-QA-oAX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="To3-5k-Uva"/>
+                <constraint firstItem="sRH-aO-YPa" firstAttribute="top" secondItem="AWS-QA-oAX" secondAttribute="bottom" constant="20" id="baR-Sc-Mu3"/>
+                <constraint firstItem="dqe-k8-wJv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="eNe-Oy-G2S"/>
+                <constraint firstItem="HVN-Rd-8wT" firstAttribute="top" secondItem="sRH-aO-YPa" secondAttribute="bottom" constant="20" id="gB3-zq-Gir"/>
+                <constraint firstItem="AWS-QA-oAX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="i6E-om-BMn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AWS-QA-oAX" secondAttribute="trailing" constant="20" id="oKP-wi-Kav"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sRH-aO-YPa" secondAttribute="trailing" constant="20" id="qsl-9z-Vvg"/>
+                <constraint firstItem="sRH-aO-YPa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="tdv-iP-1Zt"/>
+            </constraints>
+            <point key="canvasLocation" x="140.57971014492756" y="130.58035714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

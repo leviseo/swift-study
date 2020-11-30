@@ -15,6 +15,7 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var songs: [Song] = []
     
     var isFirstCall: Bool = true
+    var indexPathOfEditRow: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,21 +59,31 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title:  "delete", handler: { [self] (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-            // Call edit action
-            let songID = songs[indexPath.row].id
+        let deleteAction = UIContextualAction(style: .destructive, title:  "delete", handler: { [weak self] (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            // Call delete action
+            guard let self = self else { return }
+            let songID = self.songs[indexPath.row].id
             AF.request(url + "/" + songID, method: .delete)
                 .validate(statusCode: 200..<300)
                 .response { response in
                     print(response)
                 }
     
-            getSongArray(indexPath)
+            self.getSongArray()
             // Reset state
             success(true)
         })
-        let editAction = UIContextualAction(style: .normal, title:  "edit", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+        
+        let editAction = UIContextualAction(style: .normal, title:  "edit", handler: { [weak self] (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            
+            guard let self = self else { return }
+            
             // Call edit action
+            let editVC = EditVC()
+            editVC.editSong = self.songs[indexPath.row]
+            self.indexPathOfEditRow = indexPath
+            editVC.modalPresentationStyle = .fullScreen
+            self.navigationController?.present(editVC, animated: true)
             // Reset state
             success(true)
         })
@@ -120,9 +131,8 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 //        print("new : \(songs)")
 //    }
 
-   
     //    MARK: - AF get
-    func getSongArray(_ indexPath: IndexPath? = nil) {
+    func getSongArray() {
         AF.request(url)
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
@@ -148,14 +158,39 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                         else {
                             
                             // 2개 배열 비교 달라진 인덱스 배열을 가져옴.
+                            let addedSongIndex = serverData.diffIndies(self.songs)
+                            print("added index : ", addedSongIndex)
+                            
+                            let deletedSongIndex = self.songs.diffIndies(serverData)
+                            print("deleted index : ", deletedSongIndex)
+                            
                             
                             if self.songs.count == serverData.count {
-                                return
+                                
+                                if self.songs.elementsEqual(serverData) {
+                                    return
+                                }
+                                
+                                DispatchQueue.main.async {
+                                    self.songs = serverData
+                                    
+                                    guard let indexPath = self.indexPathOfEditRow else {
+                                        return
+                                    }
+                                                                        
+                                    self.ListTableView.beginUpdates()
+                                    self.ListTableView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.none)
+                                    self.ListTableView.endUpdates()
+                                    
+                                    self.indexPathOfEditRow = nil
+                                }
                             }
                             else if self.songs.count > serverData.count { // row delete 했을 때
                                 DispatchQueue.main.async {
                                     
-                                    let arrayIndexPath: [IndexPath] = [indexPath!]
+//                                    let arrayIndexPath: [IndexPath] = [indexPath!]
+                                    let deleteIndexPath = IndexPath(row: deletedSongIndex[0], section: 0)
+                                    let arrayIndexPath: [IndexPath] = [deleteIndexPath]
                                     self.songs = serverData
                                     
                                     self.ListTableView.beginUpdates()
@@ -168,7 +203,8 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                                 
                                 DispatchQueue.main.async {
                                     
-                                    let insertIndexPath = IndexPath(row: self.songs.count, section: 0)
+//                                    let insertIndexPath = IndexPath(row: self.songs.count, section: 0)
+                                    let insertIndexPath = IndexPath(row: addedSongIndex[0], section: 0)
                                     let arrayIndexPath: [IndexPath] = [insertIndexPath]
                                     self.songs = serverData
                                     self.ListTableView.beginUpdates()
@@ -181,11 +217,7 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                             }
                         }
                         
-                        
-                        
-                        print(self.songs)
-                        
-                        
+//                        print(self.songs)
                         
                     } catch {
                         print("decoding Error: \(error)")

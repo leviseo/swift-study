@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Song: Codable {
+struct Song: Codable, Equatable {
     var id: String
     var name: String
     var img: String
@@ -19,4 +19,24 @@ struct Song: Codable {
         case img = "img"
         case song = "song"
     }
+    
+    static func ==(lhs: Song, rhs: Song) -> Bool {
+        return lhs.id == rhs.id
+            && lhs.img == rhs.img
+            && lhs.name == rhs.name
+            && lhs.song == rhs.song
+    }
 }
+
+extension Collection where Element == Song {
+    func diffIndies(_ items: [Song]) -> [Index] {
+        return self.indices.filter{!items.contains(self[$0])}
+    }
+}
+
+
+
+//typealias Songs = [Song]
+
+//var songs: [Song] = []
+

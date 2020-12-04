@@ -21,6 +21,7 @@
 		40B590BC255674A800421735 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B590BB255674A800421735 /* AppDelegate.swift */; };
 		40B590C5255674A900421735 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40B590C4255674A900421735 /* Assets.xcassets */; };
 		40B590C8255674A900421735 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40B590C6255674A900421735 /* LaunchScreen.storyboard */; };
+		DB3D8118257A2F6F00EF505B /* VideoId.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D8117257A2F6F00EF505B /* VideoId.swift */; };
 		DB6E568C2570EF92007BA824 /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6E568A2570EF92007BA824 /* EditVC.swift */; };
 		DB6E568D2570EF92007BA824 /* EditVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB6E568B2570EF92007BA824 /* EditVC.xib */; };
 		DBCBC12B25763ECE0049B375 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCBC12925763ECE0049B375 /* DetailVC.swift */; };
@@ -46,6 +47,7 @@
 		40B590C9255674A900421735 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5C43578E4315FE883AD7272 /* Pods-CRUDTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRUDTest.release.xcconfig"; path = "Target Support Files/Pods-CRUDTest/Pods-CRUDTest.release.xcconfig"; sourceTree = "<group>"; };
 		D17BD524C9E00EF608AFAE95 /* Pods_CRUDTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CRUDTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB3D8117257A2F6F00EF505B /* VideoId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoId.swift; sourceTree = "<group>"; };
 		DB6E568A2570EF92007BA824 /* EditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVC.swift; sourceTree = "<group>"; };
 		DB6E568B2570EF92007BA824 /* EditVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditVC.xib; sourceTree = "<group>"; };
 		DBCBC12925763ECE0049B375 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
@@ -181,6 +183,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DB3D811D257A39CB00EF505B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DB3D8117257A2F6F00EF505B /* VideoId.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		DB6E568F2570EF96007BA824 /* EditVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +212,7 @@
 		DBCBC12E25763ED10049B375 /* DetailVC */ = {
 			isa = PBXGroup;
 			children = (
+				DB3D811D257A39CB00EF505B /* Model */,
 				DB71EDA22579F7BD00CEC2C7 /* Controller */,
 			);
 			path = DetailVC;
@@ -336,6 +347,7 @@
 				40B25EB9255D8F1100E960C0 /* WriteCell.swift in Sources */,
 				40B590BC255674A800421735 /* AppDelegate.swift in Sources */,
 				DBE2B659255D14E4008E50E2 /* APIManager.swift in Sources */,
+				DB3D8118257A2F6F00EF505B /* VideoId.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -61,10 +61,13 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let youtubeUrl : String = "https://www.youtube.com/results?search_query=" + String(songs[indexPath.row].name) + "+" + String(songs[indexPath.row].song)
-        print(youtubeUrl)
+//        let youtubeUrl : String = "https://www.youtube.com/results?search_query=" + String(songs[indexPath.row].name) + "+" + String(songs[indexPath.row].song)
+//        print(youtubeUrl)
         
-        self.navigationController?.pushViewController(DetailVC(), animated: true)
+        let detailVC = DetailVC()
+        detailVC.nameSong = String(songs[indexPath.row].name) + "+" + String(songs[indexPath.row].song)
+        print("list 에서 넘기는 nameSong : \(detailVC.nameSong)")
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

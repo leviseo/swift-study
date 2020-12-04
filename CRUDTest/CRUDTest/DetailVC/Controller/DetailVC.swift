@@ -25,7 +25,7 @@ class DetailVC: UIViewController {
     
     func getVideoId() {
         let parameters = [
-            "key" : "AIzaSyBonXwu5yBAk0W0Mclq2cGOg5uazniXFP0",
+            "key" : "",
             "q": nameSong
         ]
         
@@ -48,7 +48,7 @@ class DetailVC: UIViewController {
                             print("item 이 비어있음")
                         }
                         else {
-                            let resultVideoId: String = videoID.items[0].id.videoID 
+                            let resultVideoId: String = videoID.items[0].id.videoID
                             self.playerView.load(withVideoId: resultVideoId)
                         }
                     }

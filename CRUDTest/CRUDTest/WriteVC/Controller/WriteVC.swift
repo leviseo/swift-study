@@ -19,10 +19,10 @@ class WriteVC: UIViewController, UITextViewDelegate, UITextFieldDelegate {
         self.songField.delegate = self
         self.submitBtn.isEnabled = false
         self.nameField.becomeFirstResponder() // 처음 진입 시 이름 입력에 포커스
-    }
-    
-    deinit {
-        print("WriteVC deinit")
+        
+        let saveBtn = UIBarButtonItem(title: "save", style: UIBarButtonItem.Style.done, target: self, action: #selector(self.write))
+//        saveBtn.isEnabled = false
+        self.navigationItem.rightBarButtonItem = saveBtn
     }
     
     @IBAction func editChanged(_ sender: UITextField) {
@@ -43,7 +43,7 @@ class WriteVC: UIViewController, UITextViewDelegate, UITextFieldDelegate {
         return true
     }
 //    MARK: - 새 음악 등록
-    func write() {
+    @objc func write() {
         let name: String = nameField.text!
         let song: String = songField.text!
         let img: String = imgField.text!.isEmpty ? "http://via.placeholder.com/60" : imgField.text!
@@ -58,9 +58,9 @@ class WriteVC: UIViewController, UITextViewDelegate, UITextFieldDelegate {
 //    MARK: - 새 음악 등록 통신
     func createSong(name: String, img: String, song: String) {
         let parameters: [String : String] = [
-            "name": name,
             "img": img,
-            "song": song
+            "song": song,
+            "name": name
         ]
         
         //    MARK: - API        
@@ -71,6 +71,10 @@ class WriteVC: UIViewController, UITextViewDelegate, UITextFieldDelegate {
             }
     }
     
+    
+    deinit {
+        print("WriteVC deinit")
+    }
 }
 // MARK: - view life cycle
 extension WriteVC {

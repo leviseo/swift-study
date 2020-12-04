@@ -9,15 +9,17 @@ import Foundation
 
 struct Song: Codable, Equatable {
     var id: String
-    var name: String
     var img: String
     var song: String
+    var name: String
+    var youtube: String?
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
-        case name = "name"
         case img = "img"
         case song = "song"
+        case name = "name"
+        case youtube = "youtube"
     }
     
     static func ==(lhs: Song, rhs: Song) -> Bool {

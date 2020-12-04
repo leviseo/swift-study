@@ -11,14 +11,16 @@ class ViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        let ListTab: UIViewController = ListVC()
-        let WriteTab: UIViewController = WriteVC()
-        let tabList = [ListTab, WriteTab]
+//        let ListTab: UIViewController = ListVC()
+//        let WriteTab: UIViewController = WriteVC()
+//        let tabList = [ListTab, WriteTab]
         
-        ListTab.title = "List"
-        WriteTab.title = "Write"
+//        ListTab.title = "List"
+//        WriteTab.title = "Write"
         
-        self.setViewControllers(tabList.map { UINavigationController(rootViewController: $0) }, animated: true)
+//        self.setViewControllers(tabList.map { UINavigationController(rootViewController: $0) }, animated: true)
+        
+        
     }
     
 // 여백 터치 시 키보드 숨김

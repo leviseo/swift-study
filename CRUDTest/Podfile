@@ -7,5 +7,5 @@ target 'CRUDTest' do
 
   # Pods for CRUDTest
 pod 'Alamofire', '~> 5.2'
-
+pod "YoutubePlayer-in-WKWebView", "~> 0.3.0"
 end

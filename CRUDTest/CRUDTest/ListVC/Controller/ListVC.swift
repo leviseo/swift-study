@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 import Alamofire
 
 class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -20,14 +21,19 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = "List"
+        let navigationRightBtn: UIBarButtonItem = UIBarButtonItem(image: UIImage.init(systemName: "plus"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.moveToWrite))
+        let navigationLeftBtn: UIBarButtonItem = UIBarButtonItem(image: UIImage.init(systemName: "trash"), style: UIBarButtonItem.Style.plain, target: self, action: nil)
+        self.navigationItem.rightBarButtonItem = navigationRightBtn
+        self.navigationItem.leftBarButtonItem = navigationLeftBtn
+        
         let cellNib = UINib(nibName: String.init(describing: ListCell.self), bundle: nil)
         ListTableView.register(cellNib, forCellReuseIdentifier: String.init(describing: ListCell.self))
-        
-//        initRefresh() full to refresh
     }
     
-    deinit {
-        print("ListVC deinit")
+    @objc func moveToWrite() {
+        let writeVC = WriteVC()
+        self.navigationController?.pushViewController(writeVC, animated: true)
     }
 
     //    MARK: - tableView
@@ -54,6 +60,13 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let youtubeUrl : String = "https://www.youtube.com/results?search_query=" + String(songs[indexPath.row].name) + "+" + String(songs[indexPath.row].song)
+        print(youtubeUrl)
+        
+        self.navigationController?.pushViewController(DetailVC(), animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -75,9 +88,7 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         })
         
         let editAction = UIContextualAction(style: .normal, title:  "edit", handler: { [weak self] (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-            
             guard let self = self else { return }
-            
             // Call edit action
             let editVC = EditVC()
             editVC.editSong = self.songs[indexPath.row]
@@ -91,46 +102,6 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return UISwipeActionsConfiguration(actions:[deleteAction, editAction])
     }
     
-//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-//        return .delete
-//    }
-//
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        print("삭제됨")
-//
-//        print("\(indexPath.row)")
-//
-//        let songID = songs[indexPath.row].id
-//        AF.request(url + "/" + songID, method: .delete)
-//            .validate(statusCode: 200..<300)
-//            .response { response in
-//                print(response)
-//            }
-//
-//        getSongArray(indexPath)
-//
-//    }
-
-// MARK: - full to refresh
-//    func initRefresh() {
-//        let refresh = UIRefreshControl()
-//        refresh.addTarget(self, action: #selector(updateUI(refresh:)), for: .valueChanged)
-//        refresh.attributedTitle = NSAttributedString(string: "새로고침")
-//
-//        if #available(iOS 10.0, *) {
-//            ListTableView.refreshControl = refresh
-//        } else {
-//            ListTableView.addSubview(refresh)
-//        }
-//    }
-//
-//    @objc func updateUI(refresh:UIRefreshControl) {
-//        refresh.endRefreshing()
-//        ListTableView.reloadData()
-//        getSongArray()
-//        print("new : \(songs)")
-//    }
-
     //    MARK: - AF get
     func getSongArray() {
         AF.request(url)
@@ -141,9 +112,7 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 case .success(let data):
                     print("Validation Successful")
                     
-                    guard let self = self else {
-                        return
-                    }
+                    guard let self = self else { return }
                     
                     do {
                         let serverData = try JSONDecoder().decode([Song].self, from: data!)
@@ -228,8 +197,12 @@ class ListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 }
             }
     }
+    
+    
+    deinit {
+        print("ListVC deinit")
+    }
 }
-
 // MARK: - view life cycle
 extension ListVC {
     override func viewWillAppear(_ animated: Bool) {

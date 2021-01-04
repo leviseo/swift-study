@@ -10,22 +10,55 @@ import Alamofire
 import YoutubePlayer_in_WKWebView
 
 class DetailVC: UIViewController {
+    
+    var detailSong: Song?
+    
     @IBOutlet weak var playerView: WKYTPlayerView!
+    @IBOutlet weak var errorLabel: UILabel!
+    
+    @IBOutlet weak var thumbNail: UIImageView!
+    @IBOutlet weak var songLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     
     var nameSong: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getVideoId()
+        self.navigationItem.largeTitleDisplayMode = .never
+        self.errorLabel.isHidden = true
+        self.getVideoId()
+        
+        self.songLabel.text = detailSong?.song
+        self.nameLabel.text = detailSong?.name
+        
+        let thumbnail: String = detailSong!.img
+        
+        let url = URL(string: String(thumbnail))
+        
+        do {
+            let data = try Data(contentsOf: url!)
+            self.thumbNail.image = UIImage(data: data)
+        } catch {
+        }
+        
+//        let naviEditItem = UIBarButtonItem(title: "Edit", style: UIBarButtonItem.Style.plain, target: self, action: #selector(goToEditVC))
+//        self.navigationItem.rightBarButtonItem = naviEditItem
     }
     
+//    MARK: - edit으로 이동
+    @objc func goToEditVC() {
+        let editVC = EditVC()
+        editVC.editSong = self.detailSong
+        self.navigationController?.pushViewController(editVC, animated: true)
+    }
     
 //    MARK: - youtube API
     let videoUrl = "https://www.googleapis.com/youtube/v3/search"
     
     func getVideoId() {
+        nameSong = String(self.detailSong!.name) + "+" + String(self.detailSong!.song)
         let parameters = [
-            "key" : "",
+            "key" : "AIzaSyBonXwu5yBAk0W0Mclq2cGOg5uazniXFP0",
             "q": nameSong
         ]
         
@@ -46,17 +79,24 @@ class DetailVC: UIViewController {
                         
                         if videoID.items.isEmpty {
                             print("item 이 비어있음")
+                            self.errorLabel.isHidden = false
+                            self.errorLabel.text = "youtube video 목록 받아오기 실패"
                         }
                         else {
                             let resultVideoId: String = videoID.items[0].id.videoID
                             self.playerView.load(withVideoId: resultVideoId)
+                            print("받아온 결과 video ID : \(resultVideoId)")
                         }
                     }
                     catch {
                         print("decoding Error: \(error)")
+                        self.errorLabel.isHidden = false
+                        self.errorLabel.text = "youtube video ID 받아오기 실패"
                     }
                 case .failure(_):
                     print("유튜브 통신 실패")
+                    self?.errorLabel.isHidden = false
+                    self?.errorLabel.text = "youtube API 통신 실패"
                 }
             }
     }

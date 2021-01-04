@@ -15,6 +15,7 @@ class ListCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.thumbView.layer.cornerRadius = self.thumbView.frame.size.width / 2.5
     }
     
 }

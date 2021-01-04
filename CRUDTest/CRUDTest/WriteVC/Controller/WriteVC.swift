@@ -12,50 +12,98 @@ class WriteVC: UIViewController, UITextViewDelegate, UITextFieldDelegate {
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var imgField: UITextField!
     @IBOutlet weak var songField: UITextField!
-    @IBOutlet weak var submitBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.songField.delegate = self
-        self.submitBtn.isEnabled = false
         self.nameField.becomeFirstResponder() // 처음 진입 시 이름 입력에 포커스
         
-        let saveBtn = UIBarButtonItem(title: "save", style: UIBarButtonItem.Style.done, target: self, action: #selector(self.write))
-//        saveBtn.isEnabled = false
+        let saveBtn = UIBarButtonItem(title: "save", style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.write))
+        saveBtn.isEnabled = false
         self.navigationItem.rightBarButtonItem = saveBtn
+        self.navigationItem.title = "새로운 곡 추가"
     }
     
+    // MARK: - 첫 진입 시 텍스트 필드 커서 및 버튼 활성화 초기화
+        func textFieldDefaultSetting() {
+            self.nameField.text = ""
+            self.songField.text = ""
+            self.imgField.text = ""
+            self.nameField.becomeFirstResponder()
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
+        }
+    
+    // MARK: - 뒤로가기
+    func goToBack() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    // MARK: - textField 입력 시 (save 버튼 활성/비활성 토글)
     @IBAction func editChanged(_ sender: UITextField) {
         if (nameField.text != "" && songField.text != "") {
-            self.submitBtn.isEnabled = true
+            // nameField.text.count * songField.text.count != 0
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
         } else {
-            self.submitBtn.isEnabled = false
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
         }
     }
-   
-    @IBAction func submit(_ sender: Any) {
-        write()
-    }
     
+    // MARK: - 키보드 return (입력값 없을 시 알럿)
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        songField.resignFirstResponder()
-        write()
+        self.write()
+        self.songField.resignFirstResponder()
         return true
     }
-//    MARK: - 새 음악 등록
-    @objc func write() {
-        let name: String = nameField.text!
-        let song: String = songField.text!
-        let img: String = imgField.text!.isEmpty ? "http://via.placeholder.com/60" : imgField.text!
+    
+    // MARK: - 밸리데이션 알럿
+    func validationAlert(title: String) {
+        let validationAlert = UIAlertController(title: title, message: nil, preferredStyle: UIAlertController.Style.alert)
         
-        createSong(name: name, img: img, song: song)
+        let validationAlertConfirm = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
         
-        nameField.text = ""
-        songField.text = ""
-        imgField.text = ""
+        validationAlert.addAction(validationAlertConfirm)
+        
+        present(validationAlert, animated: true, completion: nil)
     }
     
-//    MARK: - 새 음악 등록 통신
+    // MARK: - 추가 등록 알럿
+    func alertMoreAddSong() {
+        let alert = UIAlertController(title: "추가로 더 등록하시겠습니까?", message: "취소 선택 시 리스트로 돌아갑니다.", preferredStyle: UIAlertController.Style.alert)
+        let defaultAction = UIAlertAction(title: "취소", style: UIAlertAction.Style.cancel, handler: { action in
+            self.goToBack()
+        })
+        let cancelAction = UIAlertAction(title: "추가등록", style: UIAlertAction.Style.default, handler: { action in
+            self.textFieldDefaultSetting()
+            
+        })
+        
+        alert.addAction(defaultAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    // MARK: - 새 음악 등록
+    @objc func write() {
+        let name: String = self.nameField.text!
+        let song: String = self.songField.text!
+        let img: String = imgField.text!.isEmpty ? "http://via.placeholder.com/60" : imgField.text!
+        
+        if name.isEmpty {
+            self.validationAlert(title: "이름을 입력해주세요.")
+        }
+        else if song.isEmpty {
+            self.validationAlert(title: "제목을 입력해주세요.")
+        }
+        else {
+            createSong(name: name, img: img, song: song)
+            
+            self.alertMoreAddSong()
+            self.textFieldDefaultSetting()
+        }
+    }
+    
+    // MARK: - 새 음악 등록 통신
     func createSong(name: String, img: String, song: String) {
         let parameters: [String : String] = [
             "img": img,
@@ -63,14 +111,13 @@ class WriteVC: UIViewController, UITextViewDelegate, UITextFieldDelegate {
             "name": name
         ]
         
-        //    MARK: - API        
+        // MARK: - API
         AF.request(url, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default)
             .validate(statusCode: 200..<300)
             .response { response in
                 print(parameters)
             }
     }
-    
     
     deinit {
         print("WriteVC deinit")

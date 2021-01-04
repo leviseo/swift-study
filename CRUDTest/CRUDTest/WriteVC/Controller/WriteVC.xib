@@ -13,7 +13,6 @@
                 <outlet property="imgField" destination="w0z-ts-3YC" id="rNT-Mc-7b5"/>
                 <outlet property="nameField" destination="cFd-uu-IWc" id="7YW-p0-BFX"/>
                 <outlet property="songField" destination="H8O-dm-Ifz" id="8GL-jE-DfU"/>
-                <outlet property="submitBtn" destination="TyG-ee-hN5" id="0gL-aH-bZ2"/>
                 <outlet property="view" destination="0vY-6z-zWE" id="mqt-m0-cAU"/>
             </connections>
         </placeholder>
@@ -46,14 +45,6 @@
                         <action selector="editChanged:" destination="-1" eventType="editingChanged" id="iBG-Oq-Qyn"/>
                     </connections>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TyG-ee-hN5">
-                    <rect key="frame" x="20" y="266" width="374" height="30"/>
-                    <color key="backgroundColor" systemColor="systemYellowColor"/>
-                    <state key="normal" title="등록"/>
-                    <connections>
-                        <action selector="submit:" destination="-1" eventType="touchUpInside" id="B2p-fY-aKb"/>
-                    </connections>
-                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="xWm-0W-9Up"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -61,12 +52,9 @@
                 <constraint firstItem="H8O-dm-Ifz" firstAttribute="leading" secondItem="xWm-0W-9Up" secondAttribute="leading" constant="20" id="03Y-b9-8Dm"/>
                 <constraint firstItem="H8O-dm-Ifz" firstAttribute="top" secondItem="w0z-ts-3YC" secondAttribute="bottom" constant="20" id="4xB-pO-VXZ"/>
                 <constraint firstItem="xWm-0W-9Up" firstAttribute="trailing" secondItem="H8O-dm-Ifz" secondAttribute="trailing" constant="20" id="8pj-xv-d3W"/>
-                <constraint firstItem="xWm-0W-9Up" firstAttribute="trailing" secondItem="TyG-ee-hN5" secondAttribute="trailing" constant="20" id="DmL-El-paR"/>
                 <constraint firstItem="xWm-0W-9Up" firstAttribute="trailing" secondItem="w0z-ts-3YC" secondAttribute="trailing" constant="20" id="F7P-Wr-YMY"/>
                 <constraint firstItem="w0z-ts-3YC" firstAttribute="top" secondItem="cFd-uu-IWc" secondAttribute="bottom" constant="20" id="L2C-pd-COZ"/>
-                <constraint firstItem="TyG-ee-hN5" firstAttribute="leading" secondItem="xWm-0W-9Up" secondAttribute="leading" constant="20" id="Qyf-fU-yeK"/>
                 <constraint firstItem="w0z-ts-3YC" firstAttribute="leading" secondItem="xWm-0W-9Up" secondAttribute="leading" constant="20" id="THS-IS-6bc"/>
-                <constraint firstItem="TyG-ee-hN5" firstAttribute="top" secondItem="H8O-dm-Ifz" secondAttribute="bottom" constant="20" id="dG3-hm-pZb"/>
                 <constraint firstItem="cFd-uu-IWc" firstAttribute="leading" secondItem="xWm-0W-9Up" secondAttribute="leading" constant="20" id="how-vZ-CcC"/>
                 <constraint firstItem="xWm-0W-9Up" firstAttribute="trailing" secondItem="cFd-uu-IWc" secondAttribute="trailing" constant="20" id="jjP-8B-IdZ"/>
                 <constraint firstItem="cFd-uu-IWc" firstAttribute="top" secondItem="xWm-0W-9Up" secondAttribute="top" constant="60" id="yda-vQ-lwH"/>
@@ -77,9 +65,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

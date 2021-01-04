@@ -10,7 +10,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailVC" customModule="CRUDTest" customModuleProvider="target">
             <connections>
+                <outlet property="errorLabel" destination="8ZS-Gc-Dth" id="IFA-G9-ez0"/>
+                <outlet property="nameLabel" destination="jGq-VL-le2" id="F5N-2J-oWa"/>
                 <outlet property="playerView" destination="Bfh-YN-GgL" id="Iva-Vw-h8I"/>
+                <outlet property="songLabel" destination="7es-HC-9lb" id="bIc-IF-CGj"/>
+                <outlet property="thumbNail" destination="KFh-ZK-fyF" id="7g4-e1-kZw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,18 +25,60 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bfh-YN-GgL" customClass="WKYTPlayerView">
                     <rect key="frame" x="0.0" y="44" width="414" height="233"/>
-                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="error message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ZS-Gc-Dth">
+                            <rect key="frame" x="152" y="106" width="110" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Bfh-YN-GgL" secondAttribute="height" multiplier="16:9" id="Iaz-hP-7TF"/>
+                        <constraint firstItem="8ZS-Gc-Dth" firstAttribute="centerY" secondItem="Bfh-YN-GgL" secondAttribute="centerY" id="R53-jt-ZHr"/>
+                        <constraint firstItem="8ZS-Gc-Dth" firstAttribute="centerX" secondItem="Bfh-YN-GgL" secondAttribute="centerX" id="paj-Zi-hI4"/>
                     </constraints>
                 </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KFh-ZK-fyF">
+                    <rect key="frame" x="20" y="297" width="128" height="128"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="128" id="sdg-Ed-oBW"/>
+                        <constraint firstAttribute="height" constant="128" id="xpJ-Lx-qRB"/>
+                    </constraints>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="lLl-nK-GFb">
+                    <rect key="frame" x="164" y="317" width="230" height="80"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="노래제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7es-HC-9lb">
+                            <rect key="frame" x="0.0" y="0.0" width="230" height="46.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아티스트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGq-VL-le2">
+                            <rect key="frame" x="0.0" y="46.5" width="230" height="33.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="NVk-UO-lQp"/>
+                    </constraints>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="KFh-ZK-fyF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="82X-pw-LMk"/>
+                <constraint firstItem="lLl-nK-GFb" firstAttribute="leading" secondItem="KFh-ZK-fyF" secondAttribute="trailing" constant="16" id="IvD-1i-7h6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lLl-nK-GFb" secondAttribute="trailing" constant="20" id="Ukm-1c-fLv"/>
+                <constraint firstItem="KFh-ZK-fyF" firstAttribute="top" secondItem="Bfh-YN-GgL" secondAttribute="bottom" constant="20" id="Xsz-0m-V1t"/>
                 <constraint firstItem="Bfh-YN-GgL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="fv5-sx-fwg"/>
                 <constraint firstItem="Bfh-YN-GgL" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="uPE-Wm-c5v"/>
                 <constraint firstItem="Bfh-YN-GgL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vy7-DD-6Xg"/>
+                <constraint firstItem="lLl-nK-GFb" firstAttribute="top" secondItem="Bfh-YN-GgL" secondAttribute="bottom" constant="40" id="xMT-tz-cc5"/>
             </constraints>
             <point key="canvasLocation" x="-201.44927536231884" y="89.732142857142847"/>
         </view>
@@ -40,9 +86,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

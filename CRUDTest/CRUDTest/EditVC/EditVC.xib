@@ -10,12 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditVC" customModule="CRUDTest" customModuleProvider="target">
             <connections>
-                <outlet property="cancelBtn" destination="NRh-Mu-636" id="cDt-Uw-oZv"/>
-                <outlet property="closeBtn" destination="CsD-wA-QcQ" id="FQ1-q4-iuf"/>
-                <outlet property="confirmBtn" destination="27D-qJ-NSD" id="Nqm-D1-XmT"/>
-                <outlet property="imgField" destination="sRH-aO-YPa" id="R5W-YK-42o"/>
-                <outlet property="nameField" destination="AWS-QA-oAX" id="7aR-I3-f3x"/>
-                <outlet property="songField" destination="HVN-Rd-8wT" id="dsi-ww-G83"/>
+                <outlet property="editTable" destination="lN2-5I-W2M" id="uRx-N8-enL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,82 +19,19 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AWS-QA-oAX">
-                    <rect key="frame" x="20" y="84" width="374" height="34"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="img" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sRH-aO-YPa">
-                    <rect key="frame" x="20" y="138" width="374" height="34"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="song" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HVN-Rd-8wT">
-                    <rect key="frame" x="20" y="192" width="374" height="34"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Lk3-MK-7mL">
-                    <rect key="frame" x="20" y="254" width="374" height="30"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRh-Mu-636">
-                            <rect key="frame" x="0.0" y="0.0" width="187" height="30"/>
-                            <color key="backgroundColor" systemColor="systemGray5Color"/>
-                            <state key="normal" title="cancel"/>
-                            <connections>
-                                <action selector="clickCancelBtn:" destination="-1" eventType="touchUpInside" id="R85-H8-Cff"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27D-qJ-NSD">
-                            <rect key="frame" x="187" y="0.0" width="187" height="30"/>
-                            <color key="backgroundColor" systemColor="systemTealColor"/>
-                            <state key="normal" title="confirm"/>
-                            <connections>
-                                <action selector="clickConfirmBtn:" destination="-1" eventType="touchUpInside" id="cMh-YS-snf"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CsD-wA-QcQ">
-                    <rect key="frame" x="374.5" y="54" width="19.5" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <state key="normal" image="clear" catalog="system"/>
-                    <connections>
-                        <action selector="clickCloselBtn:" destination="-1" eventType="touchUpInside" id="XrT-3Q-cIe"/>
-                    </connections>
-                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="insetGrouped" allowsSelection="NO" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="lN2-5I-W2M">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HVN-Rd-8wT" secondAttribute="trailing" constant="20" id="21S-iE-ud0"/>
-                <constraint firstItem="HVN-Rd-8wT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="2a0-E6-rtR"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CsD-wA-QcQ" secondAttribute="trailing" constant="20" id="EBk-qQ-ipz"/>
-                <constraint firstItem="AWS-QA-oAX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="To3-5k-Uva"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Lk3-MK-7mL" secondAttribute="trailing" constant="20" id="Yaq-kZ-XWk"/>
-                <constraint firstItem="sRH-aO-YPa" firstAttribute="top" secondItem="AWS-QA-oAX" secondAttribute="bottom" constant="20" id="baR-Sc-Mu3"/>
-                <constraint firstItem="HVN-Rd-8wT" firstAttribute="top" secondItem="sRH-aO-YPa" secondAttribute="bottom" constant="20" id="gB3-zq-Gir"/>
-                <constraint firstItem="AWS-QA-oAX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="i6E-om-BMn"/>
-                <constraint firstItem="CsD-wA-QcQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="ikl-Wo-071"/>
-                <constraint firstItem="Lk3-MK-7mL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="j9s-1e-F8W"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Lk3-MK-7mL" secondAttribute="bottom" constant="578" id="jaU-ta-98j"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AWS-QA-oAX" secondAttribute="trailing" constant="20" id="oKP-wi-Kav"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sRH-aO-YPa" secondAttribute="trailing" constant="20" id="qsl-9z-Vvg"/>
-                <constraint firstItem="sRH-aO-YPa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="tdv-iP-1Zt"/>
-            </constraints>
             <point key="canvasLocation" x="140.57971014492756" y="130.58035714285714"/>
         </view>
     </objects>
     <resources>
-        <image name="clear" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

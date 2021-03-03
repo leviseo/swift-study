@@ -13,10 +13,16 @@
 		404BE9CC255462E200E94234 /* TblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 404BE9CA255462E200E94234 /* TblCell.xib */; };
 		40BF479E2554452700E3845B /* CollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BF479C2554452700E3845B /* CollectionVC.swift */; };
 		40BF479F2554452700E3845B /* CollectionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40BF479D2554452700E3845B /* CollectionVC.xib */; };
+		DB2B55DF25D260F000B7CC7E /* CollapseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2B55DD25D260F000B7CC7E /* CollapseVC.swift */; };
+		DB2B55E025D260F000B7CC7E /* CollapseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB2B55DE25D260F000B7CC7E /* CollapseVC.xib */; };
+		DB69EFBF25E4E9550016828A /* ScrollVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB69EFBD25E4E9550016828A /* ScrollVC.swift */; };
+		DB69EFC025E4E9550016828A /* ScrollVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB69EFBE25E4E9550016828A /* ScrollVC.xib */; };
 		DBA190082553ED8400A81277 /* TableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA190062553ED8400A81277 /* TableVC.swift */; };
 		DBA190092553ED8400A81277 /* TableVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBA190072553ED8400A81277 /* TableVC.xib */; };
 		DBA1900F2553EE3800A81277 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA1900D2553EE3800A81277 /* TableViewCell.swift */; };
 		DBA190102553EE3800A81277 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBA1900E2553EE3800A81277 /* TableViewCell.xib */; };
+		DBBAC17925DF624C00145C8E /* AddSubViewTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBAC17725DF624C00145C8E /* AddSubViewTestVC.swift */; };
+		DBBAC17A25DF624C00145C8E /* AddSubViewTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBBAC17825DF624C00145C8E /* AddSubViewTestVC.xib */; };
 		DBE01E4E2553D2D80049D733 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBE01E4D2553D2D80049D733 /* ViewController.xib */; };
 		DBE1AD6D2552E14B00C89E05 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE1AD6C2552E14B00C89E05 /* CollectionCell.swift */; };
 		DBE1AD702552E17600C89E05 /* CollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBE1AD6F2552E17600C89E05 /* CollectionCell.xib */; };
@@ -33,10 +39,16 @@
 		404BE9CA255462E200E94234 /* TblCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TblCell.xib; sourceTree = "<group>"; };
 		40BF479C2554452700E3845B /* CollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionVC.swift; sourceTree = "<group>"; };
 		40BF479D2554452700E3845B /* CollectionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionVC.xib; sourceTree = "<group>"; };
+		DB2B55DD25D260F000B7CC7E /* CollapseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapseVC.swift; sourceTree = "<group>"; };
+		DB2B55DE25D260F000B7CC7E /* CollapseVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollapseVC.xib; sourceTree = "<group>"; };
+		DB69EFBD25E4E9550016828A /* ScrollVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollVC.swift; sourceTree = "<group>"; };
+		DB69EFBE25E4E9550016828A /* ScrollVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollVC.xib; sourceTree = "<group>"; };
 		DBA190062553ED8400A81277 /* TableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableVC.swift; sourceTree = "<group>"; };
 		DBA190072553ED8400A81277 /* TableVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableVC.xib; sourceTree = "<group>"; };
 		DBA1900D2553EE3800A81277 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		DBA1900E2553EE3800A81277 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		DBBAC17725DF624C00145C8E /* AddSubViewTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubViewTestVC.swift; sourceTree = "<group>"; };
+		DBBAC17825DF624C00145C8E /* AddSubViewTestVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddSubViewTestVC.xib; sourceTree = "<group>"; };
 		DBE01E4D2553D2D80049D733 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		DBE1AD6C2552E14B00C89E05 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		DBE1AD6F2552E17600C89E05 /* CollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionCell.xib; sourceTree = "<group>"; };
@@ -87,6 +99,24 @@
 			path = TableViewCell;
 			sourceTree = "<group>";
 		};
+		DB2B55DC25D260C400B7CC7E /* CollapseVC */ = {
+			isa = PBXGroup;
+			children = (
+				DB2B55DD25D260F000B7CC7E /* CollapseVC.swift */,
+				DB2B55DE25D260F000B7CC7E /* CollapseVC.xib */,
+			);
+			path = CollapseVC;
+			sourceTree = "<group>";
+		};
+		DB69EFBC25E4E93B0016828A /* ScrollVC */ = {
+			isa = PBXGroup;
+			children = (
+				DB69EFBD25E4E9550016828A /* ScrollVC.swift */,
+				DB69EFBE25E4E9550016828A /* ScrollVC.xib */,
+			);
+			path = ScrollVC;
+			sourceTree = "<group>";
+		};
 		DBA190052553ED5300A81277 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +134,15 @@
 				DBA190072553ED8400A81277 /* TableVC.xib */,
 			);
 			path = TableVC;
+			sourceTree = "<group>";
+		};
+		DBBAC17525DF622600145C8E /* AddSubViewTestVC */ = {
+			isa = PBXGroup;
+			children = (
+				DBBAC17725DF624C00145C8E /* AddSubViewTestVC.swift */,
+				DBBAC17825DF624C00145C8E /* AddSubViewTestVC.xib */,
+			);
+			path = AddSubViewTestVC;
 			sourceTree = "<group>";
 		};
 		DBE1AD692552436F00C89E05 /* CollectionVC */ = {
@@ -152,6 +191,9 @@
 				DBE1AD692552436F00C89E05 /* CollectionVC */,
 				DBA1900C2553ED8C00A81277 /* TableVC */,
 				404BE9C725545F3D00E94234 /* TblView */,
+				DB2B55DC25D260C400B7CC7E /* CollapseVC */,
+				DBBAC17525DF622600145C8E /* AddSubViewTestVC */,
+				DB69EFBC25E4E93B0016828A /* ScrollVC */,
 			);
 			path = VCTest3;
 			sourceTree = "<group>";
@@ -214,12 +256,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBE1AD702552E17600C89E05 /* CollectionCell.xib in Resources */,
+				DB69EFC025E4E9550016828A /* ScrollVC.xib in Resources */,
 				404BE9C525545F3600E94234 /* TblView.xib in Resources */,
 				DBE51633254FC6E4001ABAB3 /* LaunchScreen.storyboard in Resources */,
 				DBA190102553EE3800A81277 /* TableViewCell.xib in Resources */,
 				DBE51630254FC6E4001ABAB3 /* Assets.xcassets in Resources */,
 				DBA190092553ED8400A81277 /* TableVC.xib in Resources */,
 				40BF479F2554452700E3845B /* CollectionVC.xib in Resources */,
+				DBBAC17A25DF624C00145C8E /* AddSubViewTestVC.xib in Resources */,
+				DB2B55E025D260F000B7CC7E /* CollapseVC.xib in Resources */,
 				404BE9CC255462E200E94234 /* TblCell.xib in Resources */,
 				DBE01E4E2553D2D80049D733 /* ViewController.xib in Resources */,
 			);
@@ -232,6 +277,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBBAC17925DF624C00145C8E /* AddSubViewTestVC.swift in Sources */,
+				DB69EFBF25E4E9550016828A /* ScrollVC.swift in Sources */,
+				DB2B55DF25D260F000B7CC7E /* CollapseVC.swift in Sources */,
 				DBE5162B254FC6E3001ABAB3 /* ViewController.swift in Sources */,
 				DBE51627254FC6E3001ABAB3 /* AppDelegate.swift in Sources */,
 				404BE9CB255462E200E94234 /* TblCell.swift in Sources */,

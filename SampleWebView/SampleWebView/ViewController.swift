@@ -24,10 +24,11 @@ class ViewController: UIViewController {
         let urlString = "https://www.google.com"
         if let url = URL(string: urlString) { //unwrap 옵셔널 바인딩
             let urlReq = URLRequest(url: url)
-            WebViewMain.load(urlReq)
+            self.WebViewMain.load(urlReq)
+            
+            print(CFGetRetainCount(WebViewMain))
         }
     }
-
 
 }
 

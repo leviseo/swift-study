@@ -12,6 +12,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var btn: UIButton!
     @IBOutlet weak var btnTable: UIButton!
     @IBOutlet weak var btnTblView: UIButton!
+    @IBOutlet weak var btnCollapse: UIButton!
+    @IBOutlet weak var btnTest: UIButton!
+    @IBOutlet weak var btnScroll: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +34,17 @@ class ViewController: UIViewController {
         pushTblView()
     }
     
+    @IBAction func clickBtnCollapse(_ sender: Any) {
+        pushCollapse()
+    }
+    @IBAction func clickBtnTest(_ sender: Any) {
+        pushAddSubViewTest()
+    }
+    
+    @IBAction func clickBtnScroll(_ sender: Any) {
+        pushScroll()
+    }
+    
     func pushView() {
         let vc = CollectionVC()
         self.navigationController?.pushViewController(vc, animated: true)
@@ -46,6 +60,20 @@ class ViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    func pushCollapse() {
+        let vc = CollapseVC()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func pushAddSubViewTest() {
+        let vc = AddSubViewTestVC()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
+    func pushScroll() {
+        let vc = ScrollVC()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
 //    view life cycle
     override func viewWillAppear(_ animated: Bool) {

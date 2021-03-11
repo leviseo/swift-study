@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 
 class MainVC: UIViewController, WKUIDelegate {
-
+    
     lazy var webView: WKWebView = {
         let webConfiguration = WKWebViewConfiguration()
         let webView = WKWebView(frame: .zero, configuration: webConfiguration)
@@ -22,15 +22,16 @@ class MainVC: UIViewController, WKUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
-
+        
         let url = URL(string: "https://www.google.com")
         let request = URLRequest(url: url!)
         webView.load(request)
     }
     
+    
     func setupUI() {
         self.view.addSubview(webView)
-
+        
         NSLayoutConstraint.activate([
             self.webView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
             self.webView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
@@ -38,5 +39,5 @@ class MainVC: UIViewController, WKUIDelegate {
             self.webView.leftAnchor.constraint(equalTo: self.view.leftAnchor)
         ])
     }
-
+    
 }
